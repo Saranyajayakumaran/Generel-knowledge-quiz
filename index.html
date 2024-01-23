@@ -4,16 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets\images\favicon\apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets\images\favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets\images\favicon\favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="assets\css\style.css">
     <title>GK Quiz</title>
 </head>
 
 <body>
     <div class="heading">
-    <img class="logo" src="assets\images\favicon.ico" alt="logo"> 
-    <h1 >
-        General Knowledge Quiz
-    </h1>
+        <img class="logo" src="assets\images\favicon.ico" alt="logo">
+        <h1>
+            General Knowledge Quiz
+        </h1>
     </div>
     <!--Get the name of the user-->
     <div class="username">
@@ -21,7 +25,9 @@
         <input type="text" id="name" name="name">
     </div>
     <!--start button-->
-    <div class="start_btn"><button>Start Quiz</button></div>
+    <div class="start_btn">
+        <button onclick="startQuiz()">Start Quiz</button>
+    </div>
     <!--Game info-->
     <div class="game-info">
         <div class="info">You have only 15 seconds for each question</div>
@@ -34,16 +40,18 @@
     <!--Game area-->
     <div class="game-area">
         <div class="time">
-            <div class="time-left">You have only:</div>
+            <div class="time-left">Time left:</div>
             <div class="seconds">15</div>
         </div>
         <div class="quiz-area">
-            <div id="question">qestions</div>
-            <div id="options">
-                <button class="btn">option1</button>
-                <button class="btn">option2</button>
-                <button class="btn">option3</button>
-                <button class="btn">option4</button>
+            <div id="quiz">
+                <h2 id="question">Questions</h2>
+                <div id="options">
+                    <button class="btn">option1</button>
+                    <button class="btn">option2</button>
+                    <button class="btn">option3</button>
+                    <button class="btn">option4</button>
+                </div>
             </div>
             <button onclick="nextQuestion()">Next</button>
         </div>

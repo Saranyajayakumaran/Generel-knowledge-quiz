@@ -1,23 +1,216 @@
 body{
-    background:rgb(255, 255, 255);
+    background:rgb(2, 2, 2);
 }
 .heading{
-    background:#49f5e7;
-    width:100%;
+    background:#48f132;
     height:fit-content;
-    max-width:150px;
     text-align:center;
     color: #130404;
-    margin:50px;
-    margin-left:40px;
     padding:20px;
     text-transform: uppercase;
     font-size:10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    width:fit-content;
+    margin:20px;
 
 }
-.logo{
-    align;
+.logo {
+    width: 40px;
+    height: 40px;
+  }
+  .game-info {
+    margin-bottom:30px;
+    padding:10px;
     
-    
-
+  }
+  .username,input{
+    font-size:20px;
+    padding:5px;
+    text-align: center;
+    color:#ffffff;
+  }
+.game-area{
+    background:#48f132;
+    width:100%;
+    font-size:10px;
 }
+.time{
+    padding:10px;
+    padding-left:160px;
+    flex-direction: row;
+    display:flex;
+    font-size:15px;
+}
+.seconds{
+    font-weight:bold;
+}
+#options{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+}
+.btn{
+    width:150px;
+    padding:10px;
+    background-color: #e4e4e4;
+    margin-bottom:10px;
+    text-align: center;
+}
+
+
+/*body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background:url("..\images\backgroud.webp") no-repeat center center fixed;
+    background-color:black;
+  }
+  /*quiz heading*/
+  /*.heading {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    width:fit-content;
+    margin:20px;
+
+  }
+ /*make logo to display evenlywith heading*/
+ /* .logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  .username {
+    margin: 20px;
+    text-align: center;
+    color:#fff;
+  }
+
+  label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input {
+    padding: 10px;
+    font-size: 16px;
+  }
+  /*styling the start button,continue and exit buttons*/
+
+  /*.start_btn, .game-info, .game-area {
+    text-align: center;
+    margin: 20px;
+  }
+
+  .start_btn button, .exit, .continue, #options .btn, button {
+    background-color: #94c4e4;
+    color: #0a0909;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .game-info .info {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .info{
+    color:#fff;
+  }
+
+  .game-area .time {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .time{
+    color:#fff;
+  }
+
+  .game-area {
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+  .seconds{
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+  .quiz-area{
+    display:none;
+  }
+
+  .quiz-area {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+ /*questions of the quiz area*/
+  /*#quiz h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  #options .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }*/
+
+  /*desktop*/
+  @media only screen and (min-width: 1200px){
+
+    .heading {
+        margin-left:400px;
+        margin-top:50px;
+        width:500px;
+      }
+    
+    #options .btn{
+        width:500px;
+
+    }
+    .quiz-area{
+        width:500px;
+        margin:auto;
+    }
+    
+  }
+
+  /* Media query:tablets and larger(768px and up*/
+@media screen and (min-width:768px) {
+    .heading {
+        
+        width:500px;
+        margin:auto;
+        margin-top:50px;
+      }
+    
+    #options .btn{
+        width:500px;
+
+    }
+    .quiz-area{
+        width:500px;
+        margin:auto;
+    }
+    
+  }
