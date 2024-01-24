@@ -30,10 +30,18 @@
     </div>
     <!--Game info-->
     <div class="game-info">
-        <div class="info">You have only 15 seconds for each question</div>
+        <div class="info">
+            <h3>Game Rules:</h3>
+            <ol>
+                <li>You have only 15 seconds for each question</li>
+                <li>rule2</li>
+                <li>rule3</li>
+                <li>rule4</li>
+            </ol>
+        </div>
         <div class="buttons">
             <button class="exit">Exit</button>
-            <button class="continue">Continue</button>
+            <button class="continue" onclick="continueQuiz()">Continue</button>
         </div>
     </div>
 
@@ -53,7 +61,9 @@
                     <button class="btn">option4</button>
                 </div>
             </div>
+            <div class="next">
             <button onclick="nextQuestion()">Next</button>
+            </div>
         </div>
 
     </div>
