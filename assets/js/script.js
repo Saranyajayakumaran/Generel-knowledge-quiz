@@ -1,9 +1,20 @@
-console.log("connected")
+document.addEventListener('DOMContentLoaded', function() {
+    let userName="";
+    let currentQuestionIndex=0;
 
-function startQuiz() {
-    // Get the quiz area element
-    var quizArea = document.querySelector('.game-area');
+    let nameInput=document.getElementById("name");
+    let startBtn = document.querySelector(".start_btn button");
+    let exitBtn = document.getElementsByClassName("exit");
+    let nextBtn = document.getElementsByClassName("next");
+    
+});
 
-    // Display the quiz area
-    quizArea.style.display = 'block';
-  }
+
+function startQuiz(){
+        // Hide start button and show game area
+        document.querySelector(".start_btn").style.display = "none";
+        document.querySelector(".game-info").style.display = "none";
+        document.querySelector(".username").style.display="none";
+        document.querySelector(".game-area").style.display = "block";
+
+}

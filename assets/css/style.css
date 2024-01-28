@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background: #FFBA00;
-    /*background:url("assets\images\BACKGROUND.webp")*/
+    background:url'("assets\images\background.jpg")';
 
 
 }
@@ -61,6 +61,9 @@ input {
     width: 100%;
     font-size: 20px;
     color: #ffffff;
+}
+.game-area{
+    display:none;
 }
 
 .time {
@@ -221,6 +224,8 @@ input {
     }
 }
 
+/*media query tblet */
+
 @media screen and (min-width: 1024px) {
 
     .game-info,
@@ -245,7 +250,7 @@ input {
 
 
 }
-
+/*media query ipad pro*/
 @media screen and (min-width: 1280px) {
 
     .start_btn button {
@@ -262,6 +267,7 @@ input {
 
     }
 }
+/*media query desktop*/
 
 @media screen and (min-width: 1504px) {
     .start_btn button {
@@ -272,7 +278,7 @@ input {
     .game-area {
         align-content: center;
         padding-left: 50px;
-        margin-left: 400px;
+        margin-left: 420px;
     }
 
 }
