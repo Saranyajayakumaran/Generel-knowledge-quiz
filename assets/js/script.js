@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function startQuiz(){
-        // Hide start button and show game area
-        document.querySelector(".start_btn").style.display = "none";
-        document.querySelector(".game-info").style.display = "none";
-        document.querySelector(".username").style.display="none";
-        document.querySelector(".game-area").style.display = "block";
+    // Hide start button and show game area
+    document.querySelector(".start_btn").style.display = "none";
+    document.querySelector(".game-info").style.display = "none";
+    document.querySelector(".username").style.display="none";
+    document.querySelector(".game-area").style.display = "block";
 
 }

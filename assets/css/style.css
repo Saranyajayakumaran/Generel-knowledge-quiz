@@ -3,10 +3,14 @@ body {
     margin: 0;
     padding: 0;
     background: #FFBA00;
-    background:url'("assets\images\background.jpg")';
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Ensure the background covers the entire viewport height */
+    }
 
 
-}
 
 .heading {
     background: #000000;
