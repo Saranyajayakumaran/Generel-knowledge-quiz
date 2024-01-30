@@ -22,7 +22,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /*Event listener for the Continue Button */
 
-    startGame.addEventListener(click, gameSection());
+
+    /*startGame.addEventListener("click", continueWithUsername());*/
+
+
+
 
 });
 
@@ -45,9 +49,13 @@ function startQuiz() {
     document.querySelector(".username").style.display = "block";
     document.querySelector(".game-area").style.display = "none";
 
+    
 }
 
-function gameSection() {
+function gameSection(){
+
+    /*Display only the game area */
+    
     /*show only game area when click continue button*/
     document.querySelector(".heading").style.display = "none";
     document.querySelector(".start_btn").style.display = "none";
@@ -55,8 +63,25 @@ function gameSection() {
     document.querySelector(".username").style.display = "none";
     document.querySelector(".game-area").style.display = "block";
 
-
 }
+
+/*Get user name from the user before starting the quiz*/
+function continueWithUsername() {
+    const nameInput = document.getElementById("name").value.trim();
+    /*Get user input*/
+    if (nameInput === "") {
+        alert("Please enter your name before starting.");
+    } else {
+
+        /*Display the game section when user enters the name*/
+        gameSection();
+        
+        alert("Quiz started! Welcome to GK QUIZ, " + nameInput + "!");
+    }
+}
+
+
+/*Get the questions as arrays and objects inside the array*/
 
 const quizData = [
     {
@@ -72,7 +97,7 @@ const quizData = [
 
     },
     {
-        questiion: "Where is the strongest human muscle located?",
+        question: "Where is the strongest human muscle located?",
         options: ["Tigh", "Foot", "Elbow", "Jaw"],
         correctAnswer: "Jaw"
 
@@ -83,30 +108,64 @@ const quizData = [
         correctAnswer: "Paris"
     },
     {
-        questiion: "Which city is known as 'The Eternal City'",
+        question: "Which city is known as 'The Eternal City'",
         options: ["Venice", "Turin", "Rome", "Pisa"],
         correctAnswer: "Rome"
 
     },
     {
-        questiion: "Which Plnet is closest to the Sun?",
+        question: "Which Plnet is closest to the Sun?",
         options: ["Mercury", "Mars", "Earth", "Neptune"],
         correctAnswer: "Mercury"
- 
+
     },
     {
-        questiion: "In wich country people drink more Coffee?",
+        question: "In wich country people drink more Coffee?",
         options: ["Ireland", "Germany", "Singapore", "Finland"],
         correctAnswer: "Finland"
-  
-    }
+
+    },
     {
-        tiion: "What is the currency of Europe?",
+        question: "What is the currency of Europe?",
         options: ["Dollar", "Rupee", "Euro", "Dhiram"],
         correctAnswer: "Euro"
-  
-    }
 
+    },
+    {
+        question: "What is the currency of Europe?",
+        options: ["Dollar", "Rupee", "Euro", "Dhiram"],
+        correctAnswer: "Euro"
+    },
+    {
+        question: "Which planet is known as the “Blue Planet”?",
+        options: ["Earth", "Uranus", "Jupiter", "Saturn"],
+        correctAnswer: "Earth"
+    },
+    {
+        question: "What is the world's largest ocean?",
+        options: ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Southern Ocean"],
+        correctAnswer: "Pacific Ocean"
+    },
+    {
+        question: "Who was the first person to step foot on the moon in 1969?",
+        options: ["Neil Armstrong ", "Buzz Aldrin", "Michael Collins", "Yuri Gagarin"],
+        correctAnswer: "Neil Armstrong"
+
+    },
+    {
+        question: "Who painted the Mona Lisa?",
+        options: ["Vincent van Gogh", "Leonardo da Vinci", " Pablo Picasso", "Claude Monet"],
+        correctAnswer: "Leonardo da Vinci"
+    },
+    {
+        question: "Who painted the Mona Lisa?",
+        options: ["Vincent van Gogh", "Leonardo da Vinci", " Pablo Picasso", "Claude Monet"],
+        correctAnswer: "Leonardo da Vinci"
+    },
 ]
+
+
+
+
 
 
