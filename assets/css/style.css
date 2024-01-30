@@ -77,13 +77,13 @@ input {
     margin: 20px;
     margin-right: 25px;
     padding-bottom: 10px;
-    margin-top: 50px;
+    margin-top: 90px;
 }
 
-.game-area {
+/*.game-area {
     display: none;
     margin-top: 40px;
-}
+}*/
 
 .time {
     padding: 20px;
@@ -162,7 +162,7 @@ input {
     border: none;
     border-radius: 5px;
     margin: 20px;
-    margin-left: 100px;
+    margin-left: 85px;
 }
 
 #question h2 {
@@ -236,7 +236,8 @@ input {
     .game-area {
         width: 600px;
         padding: 30px;
-        margin: 40px;
+        margin: 50px;
+        margin-top:200px;
     }
 
     #question h2 {
@@ -257,8 +258,6 @@ input {
         margin-bottom:20px
 
     }
-
-
     .game-info,
     .game-area {
         flex-direction: row;
@@ -269,6 +268,7 @@ input {
         align-content: center;
         padding-left: 50px;
         margin-left: 170px;
+        margin-top:400px;
 
     }
 
@@ -296,6 +296,7 @@ input {
         align-content: center;
         padding-left: 50px;
         margin-left: 300px;
+        margin-top:100px;
 
     }
 }

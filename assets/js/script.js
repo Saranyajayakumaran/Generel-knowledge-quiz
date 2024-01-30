@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function homePage() {
+    /*show only heading and start button in home page*/
     document.querySelector(".heading").style.display = "block";
     document.querySelector(".start_btn").style.display = "button";
     document.querySelector(".game-info").style.display = "none";
@@ -37,7 +38,7 @@ function homePage() {
 
 
 function startQuiz() {
-    // Hide other blocks and show 
+    /*show only heading rules and username when click startbutton*/ 
     document.querySelector(".heading").style.display = "block";
     document.querySelector(".start_btn").style.display = "none";
     document.querySelector(".game-info").style.display = "block";
@@ -47,7 +48,7 @@ function startQuiz() {
 }
 
 function gameSection(){
-
+    /*show only game area when click continue button*/
     document.querySelector(".heading").style.display = "none";
     document.querySelector(".start_btn").style.display = "none";
     document.querySelector(".game-info").style.display = "none";
