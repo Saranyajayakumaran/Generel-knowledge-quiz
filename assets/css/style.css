@@ -176,14 +176,14 @@ input {
 
         width: 400px;
         margin: auto;
-        margin-top: 250px;
+        margin-top: 100px;
         padding-left: 50px;
+        margin-bottom:20px
 
     }
 
     .heading h1 {
         padding-left: 10px;
-        ;
     }
 
     #options .btn {
@@ -219,7 +219,7 @@ input {
     input {
         padding-top: 10px;
         margin-top: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     .time {
@@ -249,6 +249,15 @@ input {
 /*media query tblet */
 
 @media screen and (min-width: 1024px) {
+
+    .heading {
+        margin: auto;
+        margin-top: 90px;
+        padding-left: 50px;
+        margin-bottom:20px
+
+    }
+
 
     .game-info,
     .game-area {
