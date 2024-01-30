@@ -12,16 +12,21 @@ document.addEventListener('DOMContentLoaded', function () {
     let questionElement = document.getElementById("question");
     let timeLeftElement = document.querySelector(".time .seconds");
     let optionsContainer = document.getElementById("options");
+    let startGame=document.getElementsByClassName("continue");
 
 
-    firstPage();
+    homePage();
 
     /* Event listener for the Start Quiz button*/
     startBtn.addEventListener("click", startQuiz);
 
+    /*Event listener for the Continue Button */
+
+    startGame.addEventListener(click,gameSection());
+
 });
 
-function firstPage() {
+function homePage() {
     document.querySelector(".heading").style.display = "block";
     document.querySelector(".start_btn").style.display = "button";
     document.querySelector(".game-info").style.display = "none";
@@ -38,5 +43,16 @@ function startQuiz() {
     document.querySelector(".game-info").style.display = "block";
     document.querySelector(".username").style.display = "block";
     document.querySelector(".game-area").style.display = "none";
+
+}
+
+function gameSection(){
+
+    document.querySelector(".heading").style.display = "none";
+    document.querySelector(".start_btn").style.display = "none";
+    document.querySelector(".game-info").style.display = "none";
+    document.querySelector(".username").style.display = "none";
+    document.querySelector(".game-area").style.display = "block";
+
 
 }
