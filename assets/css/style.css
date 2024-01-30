@@ -9,7 +9,7 @@ body {
     background-repeat: no-repeat;
     height: 100vh;
     /* Ensure the background covers the entire viewport height */
-    
+
 }
 
 .app {
@@ -77,7 +77,7 @@ input {
     margin: 20px;
     margin-right: 25px;
     padding-bottom: 10px;
-    margin-top:50px;
+    margin-top: 50px;
 }
 
 .game-area {
@@ -115,15 +115,17 @@ input {
 }
 
 
-.exit, .continue{
+.exit,
+.continue {
     width: fit-content;
     text-align: center;
     color: #000000;
     background-color: #ffffff;
-    padding:10px 20px;
+    padding: 10px 20px;
     border-radius: 5px;
-    cursor:pointer;
+    cursor: pointer;
 }
+
 /* Add some spacing between the buttons */
 
 .start_btn button {
@@ -136,10 +138,10 @@ input {
 }
 
 .buttons {
-    display:flex;
+    display: flex;
     justify-content: center;
-    flex-direction:row;
-    padding:8px;
+    flex-direction: row;
+    padding: 8px;
 }
 
 .btn {
@@ -174,15 +176,18 @@ input {
 
         width: 400px;
         margin: auto;
-        margin-top: 50px;
-        padding-left: 140px;
+        margin-top: 250px;
+        padding-left: 50px;
 
+    }
+
+    .heading h1 {
+        padding-left: 10px;
+        ;
     }
 
     #options .btn {
         width: 550px;
-
-
     }
 
     .quiz-area {
@@ -191,32 +196,31 @@ input {
     }
 
     .start_btn button {
-        margin-left: 300px;
-        margin-top: 30px;
-
-
+        margin-left: 320px;
+        margin-top: 100px;
+        width: fit-content;
     }
 
     .game-info {
 
-        padding: 10px;
+        padding: 30px;
         margin: auto;
         padding-left: 10px;
         width: 550px;
         margin-bottom: 50px;
     }
 
-    .username,
-    input {
-        padding-top: 5px;
-        margin-top: 10px;
+    .info {
+        font-size: 15px;
+        padding-bottom: 10px;
     }
 
-    /*.exit {
-
-        margin-left: 170px;
-        align-items: center;
-    }*/
+    .username,
+    input {
+        padding-top: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 
     .time {
         padding-left: 450px;
