@@ -4,11 +4,19 @@ body {
     padding: 0;
     background: #FFBA00;
 
-    background-size: cover;
+    /*background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; /* Ensure the background covers the entire viewport height */
-    }
+    height: 100vh;
+    /* Ensure the background covers the entire viewport height */
+    
+}
+
+.app {
+    width: fit-content;
+    height: fit-content;
+    background: aliceblue;
+}
 
 
 
@@ -35,15 +43,15 @@ body {
 
 .game-info {
     margin-bottom: 30px;
-    padding: 10px;
+    padding: 20px;
     line-height: 1.7;
     width: fit-content;
-    height:350px;
+    height: 450px;
     background: #000000;
     color: white;
     margin: 15px;
     padding-right: 20px;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 
 }
 
@@ -66,12 +74,15 @@ input {
     width: 85%;
     font-size: 15px;
     color: #ffffff;
-    margin:20px;
-    margin-right:25px;
-    padding-bottom:10px;
+    margin: 20px;
+    margin-right: 25px;
+    padding-bottom: 10px;
+    margin-top:50px;
 }
-.game-area{
-    display:none;
+
+.game-area {
+    display: none;
+    margin-top: 40px;
 }
 
 .time {
@@ -95,9 +106,6 @@ input {
 }
 
 /*giving all the buttons same size*/
-
-.exit,
-.continue,
 .start_btn button,
 .next button {
     padding: 10px 20px;
@@ -106,15 +114,17 @@ input {
 
 }
 
-.exit {
 
-    width: 100px;
+.exit, .continue{
+    width: fit-content;
     text-align: center;
     color: #000000;
     background-color: #ffffff;
-    
-
+    padding:10px 20px;
+    border-radius: 5px;
+    cursor:pointer;
 }
+/* Add some spacing between the buttons */
 
 .start_btn button {
     margin-left: 70px;
@@ -122,15 +132,14 @@ input {
     color: #ffffff;
     background-color: #000000;
     font-size: 20px;
-    margin-top: 30px;
-    position: relative;
-
-
+    margin: 100px;
 }
 
 .buttons {
-    align-content: center;
-    padding-left: 50px;
+    display:flex;
+    justify-content: center;
+    flex-direction:row;
+    padding:8px;
 }
 
 .btn {
@@ -203,11 +212,11 @@ input {
         margin-top: 10px;
     }
 
-    .exit {
+    /*.exit {
 
         margin-left: 170px;
         align-items: center;
-    }
+    }*/
 
     .time {
         padding-left: 450px;
@@ -259,6 +268,7 @@ input {
 
 
 }
+
 /*media query ipad pro*/
 @media screen and (min-width: 1280px) {
 
@@ -276,6 +286,7 @@ input {
 
     }
 }
+
 /*media query desktop*/
 
 @media screen and (min-width: 1504px) {

@@ -1,0 +1,6 @@
+{
+    "vscode-janus-debug.uploadOnSave": [
+        "script"
+    ],
+    "liveServer.settings.CustomBrowser": "chrome"
+}
