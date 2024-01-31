@@ -163,6 +163,9 @@ const quizData = [
 
 function getrandomQuestion(){
 
+let randomIndex=Math.floor(Math.random()*quizData.length);
+let randomQuestion=quizData[randomIndex];
+
 }
 
 function displayQuestions(){
@@ -171,6 +174,14 @@ function displayQuestions(){
 
 function nextQuestion(){
 
+}
+function getAnswer(){
+
+}
+
+function checkAnswer(){
+
+    
 }
 
 function exitQuiz() {
