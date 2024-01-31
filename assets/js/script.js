@@ -23,17 +23,14 @@ document.addEventListener('DOMContentLoaded', function () {
     /*Event listener for the Continue Button */
 
 
-    /*startGame.addEventListener("click", continueWithUsername());*/
-
-
-
+    /*startGame.addEventListener("click", continueWithUsername);*/
 
 });
 
 function homePage() {
     /*show only heading and start button in home page*/
     document.querySelector(".heading").style.display = "block";
-    document.querySelector(".start_btn").style.display = "button";
+    document.querySelector(".start_btn").style.display = "block";
     document.querySelector(".game-info").style.display = "none";
     document.querySelector(".username").style.display = "none";
     document.querySelector(".game-area").style.display = "none";
@@ -164,8 +161,35 @@ const quizData = [
     },
 ]
 
+function getrandomQuestion(){
 
+}
 
+function displayQuestions(){
 
+}
+
+function nextQuestion(){
+
+}
+
+function exitQuiz() {
+    // Display a confirmation prompt
+    const confirmExit = confirm("Are you sure you want to exit the quiz?");
+
+    // If the user confirms, end the quiz or perform other actions
+    if (confirmExit) {
+      
+        alert("Quiz exited. Thank you!");
+        resetQuiz(); // You can replace this with your own logic for handling the exit action*/
+
+       }
+}
+
+function resetQuiz(){
+
+    homePage();
+
+}
 
 
