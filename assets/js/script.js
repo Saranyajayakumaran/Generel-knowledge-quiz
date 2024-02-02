@@ -1,3 +1,6 @@
+
+/*Get the questions as arrays and objects inside the array*/
+
 const quizData = [
     {
         question: "Which is the largest Spanish-speaking city in the world?",
@@ -95,7 +98,7 @@ const quizData = [
 
 ]
 document.addEventListener('DOMContentLoaded', function () {
-    
+
     /*document.body.style.backgroundImage="url('assets\images\6114100.jpg')";*/
 
     let nameInput = document.getElementById("name");
@@ -111,8 +114,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     homePage();
 
-    
-    
+
+
     /*Event listener for the Continue Button */
     /*startGame.addEventListener("click", continueWithUsername);*/
     /* Event listener for the Start Quiz button*/
@@ -122,13 +125,12 @@ document.addEventListener('DOMContentLoaded', function () {
     nextBtn.addEventListener("click", nextQuestion);
 
 
-    showQuestion();
-
-
 });
 
-    let userName = "";
-    let score = 0;
+let userName = "";
+let score = 0;
+const selectedQuestions = [];
+let questionNumber = 0;
 
 
 function homePage() {
@@ -163,7 +165,7 @@ function gameSection() {
     document.querySelector(".username").style.display = "none";
     document.querySelector(".game-area").style.display = "block";
 
-   
+
 
 }
 
@@ -178,82 +180,84 @@ function continueWithUsername() {
         /*Display the game section when user enters the name*/
         gameSection();
         showQuestion();
-        
+
         alert("Quiz started! Welcome to GK QUIZ, " + nameInput + "!");
-
-        /*const selectedQuestions = getRandomQuestions(); // Call getRandomQuestions to get an array of random questions
-        displayQuestions(selectedQuestions);*/
-
 
     }
 }
 
 
-function showQuestion() {
-    const questionElement = document.getElementById('question');
-    const optionsElement = document.getElementById('options');
 
-    for(let currentIndex=0; currentIndex<10 ; currentIndex++){
-    const currentQuestion = quizData[currentIndex];
-
-    questionElement.textContent = currentQuestion.question;
-
-    optionsElement.innerHTML = '';
-    currentQuestion.options.forEach((option, index) => {
-        const optionButton = document.createElement('button');
-        optionButton.textContent = option;
-        optionButton.classList.add('btn');
-        optionButton.addEventListener('click', () => checkAnswer(option));
-        optionsElement.appendChild(optionButton);
-    });
-}
-}
-
-
-/*Get the questions as arrays and objects inside the array*/
-
-
-
-/*function getrandomQuestion() {
-
-    const selectedQuestions = [];
-
+/*get random questin from array*/
+function getrandomQuestion() {
     for (i = 0; i < 5; i++) {
         let randomIndex = Math.floor(Math.random() * quizData.length);
         let randomQuestion = quizData[randomIndex];
         if (randomQuestion.used === true) {
-
-
             continue;
-
+        }
+        else {
+            randomQuestion.used = true;
+            selectedQuestions.push(randomQuestion);
         }
 
-        randomQuestion.used = true;
-
-        selectedQuestions.push(randomQuestion);
     }
-
     quizData.forEach(question => (question.used = false));
     return selectedQuestions;
 
 }
 
-function displayQuestions(questions) {
+function showQuestion() {
+    const questionElement = document.getElementById('question');
+    const optionsElement = document.getElementById('options');
+  
+    /*call showQuestion function to display the random question*/
+    const selectedQuestions = getrandomQuestion();
+    
+    /*looping to assign the each index to currentQuestion*/
 
-    let questionElement = document.getElementById("question");
+    selectedQuestions.forEach((currentQuestion, index) => {
 
-    questionElement.innerHTML = questions;
+        questionElement.innerHTML = (questionNumber + 1) + "." + currentQuestion.question;
 
-}
-/*function displayOPtionButtons{
-    const optionContainer=document.elementFromPoint('div');
-    question.options.forEach((option,index)=>{
+        optionsElement.innerHTML = '';
+        currentQuestion.options.forEach((option, index) => {
+            const optionButton = document.createElement('button');
+            optionButton.textContent = option;
+            optionButton.classList.add('btn');
+            optionButton.addEventListener('click', () => checkAnswer(option, currentQuestion.correctAnswer));
+            optionsElement.appendChild(optionButton);
 
+
+        });
     })
 }
+
+function checkAnswer(selectedOption) {
+    const correctAnswer = currentQuestion.correctAnswer;
+
+    if (selectedOption === correctAnswer) {
+        // If the selected option is correct
+        alert("Correct! Good job!");
+        score++; // Increase the score
+    } else {
+        // If the selected option is incorrect
+        alert("Oops! That's incorrect. The correct answer is: " + correctAnswer);
+    }
+}
+
 function nextQuestion() {
 
+    questionNumber++;
+
+    if (questionNumber < 10) {
+        showQuestion();
+    }
+    else {
+        alert("quiz finished")
+    }
 }
+
 function getAnswer() {
 
 }
@@ -261,7 +265,7 @@ function getAnswer() {
 function checkAnswer() {
 
 
-}*/
+}
 
 function exitQuiz() {
     // Display a confirmation prompt
@@ -281,136 +285,3 @@ function resetQuiz() {
     homePage();
 
 }
-
-
-/*let currentIndex = 0; // Index to track the current question
-let timer; // Timer variable for countdown
-
-function startQuiz() {
-    const startBtn = document.querySelector('.start_btn');
-    const usernameInput = document.querySelector('.username');
-    const gameInfo = document.querySelector('.game-info');
-
-    startBtn.style.display = 'none';
-    usernameInput.style.display = 'block';
-    gameInfo.style.display = 'none';
-}
-
-function continueWithUsername() {
-    const usernameInput = document.getElementById('name');
-    const username = usernameInput.value;
-
-    if (username.trim() !== '') {
-        const usernameContainer = document.querySelector('.username');
-        const gameInfo = document.querySelector('.game-info');
-        const gameArea = document.querySelector('.game-area');
-
-        usernameContainer.style.display = 'none';
-        gameInfo.style.display = 'none';
-        gameArea.style.display = 'block';
-
-        initializeQuiz();
-    } else {
-        alert('Please enter your name.');
-    }
-}
-
-function exitQuiz() {
-    // Reset everything and go back to the start
-    currentIndex = 0;
-    clearInterval(timer);
-    resetTimer();
-    showQuestion();
-    showNextButton(false);
-
-    const startBtn = document.querySelector('.start_btn');
-    const usernameInput = document.querySelector('.username');
-    const gameInfo = document.querySelector('.game-info');
-    const gameArea = document.querySelector('.game-area');
-
-    startBtn.style.display = 'block';
-    usernameInput.style.display = 'none';
-    gameInfo.style.display = 'block';
-    gameArea.style.display = 'none';
-}
-
-function initializeQuiz() {
-    showQuestion();
-    startTimer();
-}
-
-function showQuestion() {
-    const questionElement = document.getElementById('question');
-    const optionsElement = document.getElementById('options');
-    const currentQuestion = quizData[currentIndex];
-
-    questionElement.textContent = currentQuestion.question;
-
-    optionsElement.innerHTML = '';
-    currentQuestion.options.forEach((option, index) => {
-        const optionButton = document.createElement('button');
-        optionButton.textContent = option;
-        optionButton.classList.add('btn');
-        optionButton.addEventListener('click', () => checkAnswer(option));
-        optionsElement.appendChild(optionButton);
-    });
-}
-
-function startTimer() {
-    const secondsElement = document.querySelector('.seconds');
-    let secondsLeft = 15;
-
-    timer = setInterval(function () {
-        secondsElement.textContent = secondsLeft;
-        secondsLeft--;
-
-        if (secondsLeft < 0) {
-            clearInterval(timer);
-            nextQuestion();
-        }
-    }, 1000);
-}
-
-function resetTimer() {
-    const secondsElement = document.querySelector('.seconds');
-    secondsElement.textContent = '15';
-}
-
-function showNextButton(show) {
-    const nextButton = document.querySelector('.next button');
-    nextButton.style.display = show ? 'block' : 'none';
-}
-
-function nextQuestion() {
-    clearInterval(timer);
-    resetTimer();
-    showNextButton(false);
-
-    currentIndex++;
-
-    if (currentIndex < quizData.length) {
-        showQuestion();
-        startTimer();
-    } else {
-        // Quiz finished
-        alert('Quiz finished! You can restart if you want.');
-        currentIndex = 0;
-        showNextButton(false);
-    }
-}
-
-function checkAnswer(selectedOption) {
-    const currentQuestion = quizData[currentIndex];
-
-    if (selectedOption === currentQuestion.correctAnswer) {
-        alert('Correct!');
-    } else {
-        alert('Incorrect!');
-    }
-
-    showNextButton(true);
-    clearInterval(timer);
-    resetTimer();
-
-
-}*/
