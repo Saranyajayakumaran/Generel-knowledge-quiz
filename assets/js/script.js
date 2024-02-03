@@ -152,6 +152,7 @@ function homePage() {
     document.querySelector(".game-info").style.display = "none";
     document.querySelector(".username").style.display = "none";
     document.querySelector(".game-area").style.display = "none";
+    document.getElementById("score").style.display="none";
 
 }
 
@@ -163,6 +164,7 @@ function startQuiz() {
     document.querySelector(".game-info").style.display = "block";
     document.querySelector(".username").style.display = "block";
     document.querySelector(".game-area").style.display = "none";
+    document.getElementById("score").style.display="none";
 
 }
 
@@ -177,7 +179,19 @@ function gameSection() {
     document.querySelector(".game-info").style.display = "none";
     document.querySelector(".username").style.display = "none";
     document.querySelector(".game-area").style.display = "block";
+    document.getElementById("score").style.display="none";
 }
+
+function scoreSection() {
+
+    document.querySelector(".heading").style.display = "none";
+    document.querySelector(".start_btn").style.display = "none";
+    document.querySelector(".game-info").style.display = "none";
+    document.querySelector(".username").style.display = "none";
+    document.querySelector(".game-area").style.display = "none";
+    document.getElementById("score").style.display="block";
+}
+
 
 
 /*Get user name from the user before starting the quiz*/
@@ -303,10 +317,15 @@ function selectAnswer(selectedOption) {
 }
 
 function displayScore() {
+
+    scoreSection();
     console.log("score increased:" + score)
     let scoreValue = document.getElementById("score");
+    //document.getElementById("score").style.display="block";
+    //document.getElementsByClassName(".game-area").style.display="none";
     scoreValue.innerHTML='';
     scoreValue.innerHTML = 'Your Score: ' + score + ' out of ' + randomNumbers.length;
+    
 
 }
 
