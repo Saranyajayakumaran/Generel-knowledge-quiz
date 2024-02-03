@@ -286,26 +286,14 @@ function nextQuestion() {
        // timerBegin(15);
     }
     else {
-        alert("well done! you finished your quiz, you scored:"+score);
+        alert("well done! you finished your quiz, you scored:" + score);
         questionNumber = 0;//resetting the question number to 0 before go for next call
     
     }
 }
 
 
-
 /*Code to select option button from the user and check it is correct or not*/
-
-/*function selectAnswer(option) {
-    const selectedQuizData = option.textContent;
-    const currentQuestion = selectedQuestions[questionNumber].correctAnswer;
-
-    if (selectedOption === currentQuestion) {
-        alert("Correct!");
-    } else {
-        alert("Incorrect!");
-    }
-}*/
 
 function selectAnswer(selectedOption) {
     
@@ -313,6 +301,7 @@ function selectAnswer(selectedOption) {
 
     if (selectedOption === currentQuestion.correctAnswer) {
         alert("Correct!");
+        score++;
     } else {
         alert("Incorrect! The correct answer is: " + currentQuestion.correctAnswer);
     }
