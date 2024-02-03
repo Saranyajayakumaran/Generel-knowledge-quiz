@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let optionsContainer = document.getElementById("options");
     let startGame = document.getElementsByClassName("continue");
 
-
+    
 
     homePage();
 
@@ -132,8 +132,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
     //nextBtn[0].addEventListener("click", nextQuestion);
     optBtn.addEventListener("click", showQuestion);
-
-
 });
 
 let userName = "";
@@ -172,15 +170,14 @@ function gameSection() {
     /*Display only the game area */
 
     /*show only game area when click continue button*/
+    
     document.querySelector(".heading").style.display = "none";
     document.querySelector(".start_btn").style.display = "none";
     document.querySelector(".game-info").style.display = "none";
     document.querySelector(".username").style.display = "none";
     document.querySelector(".game-area").style.display = "block";
-
-
-
 }
+
 
 /*Get user name from the user before starting the quiz*/
 function continueWithUsername() {
@@ -267,9 +264,6 @@ function showQuestion() {
         const optionButton = document.createElement('button');
         optionButton.textContent = option;
         optionButton.classList.add('btn');
-        /*if (option) {
-            optionButton.dataset.option = option === currentQuestion.correctAnswer ? "true" : "false";
-        }*/
         optionButton.addEventListener('click', () => selectAnswer(option));
         optionsElement.appendChild(optionButton);
     });
@@ -281,14 +275,15 @@ function nextQuestion() {
     questionNumber++;//increment the question number each time clicks the next button
 
     if (questionNumber < 10) {
+        
         showQuestion();
-
+    
        // timerBegin(15);
     }
     else {
-        alert("well done! you finished your quiz, you scored:" + score);
-        questionNumber = 0;//resetting the question number to 0 before go for next call
-    
+        //displayScore();
+        alert("quiz finished")
+        
     }
 }
 
@@ -300,16 +295,32 @@ function selectAnswer(selectedOption) {
     const currentQuestion=quizData[currentQuestionIndex];
 
     if (selectedOption === currentQuestion.correctAnswer) {
-        alert("Correct!");
+        //alert("Correct!");
         score++;
     } else {
-        alert("Incorrect! The correct answer is: " + currentQuestion.correctAnswer);
+        //alert("Incorrect! The correct answer is: " + currentQuestion.correctAnswer);
     }
-
-    // Proceed to the next question
-    nextQuestion();
 }
 
+
+function exitQuiz() {
+    // get confirmation from the user
+    const confirm = confirm("Are you sure you want to exit the quiz?");
+
+    // If the user confirms, end the quiz
+    if (confirm) {
+
+        alert("Quiz exited. Thank you!");
+        resetQuiz();
+
+    }
+}
+
+function resetQuiz() {
+
+    homePage();
+
+}
 
 /*function timerBegin(seconds) {
 
@@ -334,28 +345,5 @@ function displayUpdatedTime(timeLeft) {
     document.getElementsByClassName("time-left").innerHTML = "Time Left:" + timeLeft + "seconds";
 
 }*/
-
-function getAnswer() {
-
-}
-
-function exitQuiz() {
-    // get confirmation from the user
-    const confirm = confirm("Are you sure you want to exit the quiz?");
-
-    // If the user confirms, end the quiz
-    if (confirm) {
-
-        alert("Quiz exited. Thank you!");
-        resetQuiz();
-
-    }
-}
-
-function resetQuiz() {
-
-    homePage();
-
-}
 
 
