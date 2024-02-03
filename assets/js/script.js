@@ -1,6 +1,5 @@
 
 /*Get the questions as arrays and objects inside the array*/
-
 const quizData = [
     {
         question: "Which is the largest Spanish-speaking city in the world?",
@@ -89,14 +88,32 @@ const quizData = [
         used: false
     },
     {
-        question: "Who painted the Mona Lisa?",
-        options: ["Vincent van Gogh", "Leonardo da Vinci", " Pablo Picasso", "Claude Monet"],
-        correctAnswer: "Leonardo da Vinci",
+        question: 'What year did the United States gain independence?',
+        options: ["1776", "1676", "1576", "1476"],
+        correctAnswer: "1776",
         used: false
 
     },
-
+    {
+        question: "What is the world's largest ocean?",
+        options: ["Indian", "Atlantic", "Artic", "Pacific"],
+        correctAnswer: "Pacific",
+        used: false
+    },
+    {
+        question: "Who is known as the “Father of Modern Physics”?",
+        options: ["Michael Karin", " Albert Einstein", "Eric S. Lander", "Guido Kroemer"],
+        correctAnswer: "Albert Einstein",
+        used: false
+    },
+    {
+        question: "What is the currency of Japan?",
+        options: ["Rupees", "Euro", "yen", "frank"],
+        correctAnswer: "yen",
+        used: false
+    }
 ]
+
 document.addEventListener('DOMContentLoaded', function () {
 
     /*document.body.style.backgroundImage="url('assets\images\6114100.jpg')";*/
@@ -112,17 +129,21 @@ document.addEventListener('DOMContentLoaded', function () {
     let startGame = document.getElementsByClassName("continue");
 
 
+
     homePage();
 
 
-
     /*Event listener for the Continue Button */
-    /*startGame.addEventListener("click", continueWithUsername);*/
     /* Event listener for the Start Quiz button*/
     startBtn.addEventListener("click", startQuiz);
     startGame.addEventListener("click", continueWithUsername);
     exitBtn.addEventListener("click", exitQuiz);
+    optionsContainer.addEventListener("click",selectAnswer);
+    
     nextBtn.addEventListener("click", nextQuestion);
+    
+    //nextBtn[0].addEventListener("click", nextQuestion);
+    optBtn.addEventListener("click", showQuestion);
 
 
 });
@@ -131,6 +152,10 @@ let userName = "";
 let score = 0;
 const selectedQuestions = [];
 let questionNumber = 0;
+let time;
+let seconds = 15;
+let answer = [];
+let optionsElement;
 
 
 function homePage() {
@@ -188,7 +213,7 @@ function continueWithUsername() {
 
 
 
-/*get random questin from array*/
+/*get random question from array*/
 function getrandomQuestion() {
     for (i = 0; i < 5; i++) {
         let randomIndex = Math.floor(Math.random() * quizData.length);
@@ -197,35 +222,38 @@ function getrandomQuestion() {
             continue;
         }
         else {
-            randomQuestion.used = true;
+            randomQuestion.used = false;
             selectedQuestions.push(randomQuestion);
         }
 
+        /*Reset all the questions to false again*/
+        quizData.forEach(question => (question.used = false));
+        return selectedQuestions;
+
     }
-    quizData.forEach(question => (question.used = false));
-    return selectedQuestions;
-
 }
-
 function showQuestion() {
     const questionElement = document.getElementById('question');
     const optionsElement = document.getElementById('options');
-  
+
     /*call showQuestion function to display the random question*/
     const selectedQuestions = getrandomQuestion();
-    
-    /*looping to assign the each index to currentQuestion*/
+
+    /*looping to assign the each option index to currentQuestion*/
 
     selectedQuestions.forEach((currentQuestion, index) => {
 
         questionElement.innerHTML = (questionNumber + 1) + "." + currentQuestion.question;
 
-        optionsElement.innerHTML = '';
+        optionsElement.innerHTML = '';//reset the text tin option buttons
         currentQuestion.options.forEach((option, index) => {
             const optionButton = document.createElement('button');
             optionButton.textContent = option;
             optionButton.classList.add('btn');
-            optionButton.addEventListener('click', () => checkAnswer(option, currentQuestion.correctAnswer));
+            if (option) {
+                optionButton.dataset.option = option === currentQuestion.correctAnswer ? "true" : "false";
+            }
+            optionButton.addEventListener('click', (event) => selectAnswer(event.target));
             optionsElement.appendChild(optionButton);
 
 
@@ -233,37 +261,90 @@ function showQuestion() {
     })
 }
 
-function checkAnswer(selectedOption) {
-    const correctAnswer = currentQuestion.correctAnswer;
 
-    if (selectedOption === correctAnswer) {
-        // If the selected option is correct
-        alert("Correct! Good job!");
-        score++; // Increase the score
+function selectAnswer(option) {
+    const selectedOption = option.textContent;
+    const currentQuestion = selectedQuestions[questionNumber].correctAnswer;
+
+    if (selectedOption === currentQuestion) {
+        score++;
+        alert("Correct! Your score: " + score);
     } else {
-        // If the selected option is incorrect
-        alert("Oops! That's incorrect. The correct answer is: " + correctAnswer);
+        alert("Incorrect!");
     }
 }
 
-function nextQuestion() {
 
+
+/*function selectAnswer(optionsElement) {
+    const selectedOption = optionsElement.target;
+    const isCorrect = selectedOption.dataset.option === "true";
+
+    if (isCorrect) {
+        score++;
+        alert("Correct!");
+    } else {
+        alert("Incorrect!");
+    }
+}*/
+
+/*function selectAnswer(option) {
+
+    option=document.getElementsByClassName("btn");
+
+    const currentQuestion=selectedQuestions[questionNumber].correctAnswer;
+
+    if(option===currentQuestion.options){
+
+        score++;
+        alert("your score"+score);
+
+    }else{
+
+        alert("incorrect");
+
+    }
+
+}*/
+
+function nextQuestion() {
+    clearInterval(time);
     questionNumber++;
 
     if (questionNumber < 10) {
         showQuestion();
+        timerBegin(15);
     }
     else {
         alert("quiz finished")
     }
 }
 
-function getAnswer() {
+/*function timerBegin(seconds) {
 
+    var timeLeft = seconds;
+
+    displayUpdatedTime(timeLeft);
+
+    time = setInterval(function () {
+        if (timeLeft >= 0) {
+            displayUpdatedTime(timeLeft);
+            timeLeft--;
+        } else {
+            clearInterval(time);
+            nextQuestion();
+        }
+
+    }, 1000);
 }
 
-function checkAnswer() {
+function displayUpdatedTime(timeLeft) {
 
+    document.getElementsByClassName("time-left").innerHTML = "Time Left:" + timeLeft + "seconds";
+
+}*/
+
+function getAnswer() {
 
 }
 
