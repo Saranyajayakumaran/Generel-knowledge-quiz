@@ -57,12 +57,6 @@ const quizData = [
 
     },
     {
-        question: "What is the currency of Europe?",
-        options: ["Dollar", "Rupee", "Euro", "Dhiram"],
-        correctAnswer: "Euro",
-        used: false
-    },
-    {
         question: "Which planet is known as the “Blue Planet”?",
         options: ["Earth", "Uranus", "Jupiter", "Saturn"],
         correctAnswer: "Earth",
@@ -93,12 +87,6 @@ const quizData = [
         correctAnswer: "1776",
         used: false
 
-    },
-    {
-        question: "What is the world's largest ocean?",
-        options: ["Indian", "Atlantic", "Artic", "Pacific"],
-        correctAnswer: "Pacific",
-        used: false
     },
     {
         question: "Who is known as the “Father of Modern Physics”?",
@@ -156,7 +144,7 @@ let time;
 let seconds = 15;
 let answer = [];
 let optionsElement;
-
+var randomNumbers;
 
 function homePage() {
     /*show only heading and start button in home page*/
@@ -204,6 +192,11 @@ function continueWithUsername() {
 
         /*Display the game section when user enters the name*/
         gameSection();
+        
+        randomNumbers = getRandomUniqueNumbers(10, 0, (quizData.length-1));
+        //console.log("Generated unique random numbers:", randomNumbers);
+
+
         showQuestion();
 
         alert("Quiz started! Welcome to GK QUIZ, " + nameInput + "!");
@@ -211,112 +204,82 @@ function continueWithUsername() {
     }
 }
 
+function getrandomIndex() {
 
-
-/*get random question from array*/
-function getrandomQuestion() {
-    for (i = 0; i < 5; i++) {
-        let randomIndex = Math.floor(Math.random() * quizData.length);
-        let randomQuestion = quizData[randomIndex];
-        if (randomQuestion.used === true) {
-            continue;
-        }
-        else {
-            randomQuestion.used = false;
-            selectedQuestions.push(randomQuestion);
-        }
-
-        /*Reset all the questions to false again*/
-        quizData.forEach(question => (question.used = false));
-        return selectedQuestions;
-
+    if (questionNumber < randomNumbers.length)
+    {
+        return randomNumbers[questionNumber];
+    }
+    else
+    {
+        console.error("Error: question number exceeded maximum number of range.");
+        return [];
     }
 }
+
 function showQuestion() {
     const questionElement = document.getElementById('question');
     const optionsElement = document.getElementById('options');
 
-    /*call showQuestion function to display the random question*/
-    const selectedQuestions = getrandomQuestion();
-
-    /*looping to assign the each option index to currentQuestion*/
-
-    selectedQuestions.forEach((currentQuestion, index) => {
-
-        questionElement.innerHTML = (questionNumber + 1) + "." + currentQuestion.question;
-
-        optionsElement.innerHTML = '';//reset the text tin option buttons
-        currentQuestion.options.forEach((option, index) => {
-            const optionButton = document.createElement('button');
-            optionButton.textContent = option;
-            optionButton.classList.add('btn');
-            if (option) {
-                optionButton.dataset.option = option === currentQuestion.correctAnswer ? "true" : "false";
-            }
-            optionButton.addEventListener('click', (event) => selectAnswer(event.target));
-            optionsElement.appendChild(optionButton);
-
-
-        });
-    })
+    /*get random index */
+    const randomIndex = getrandomIndex();
+    const selectedQuizData = quizData[randomIndex];
+    
+    questionElement.innerHTML = (questionNumber + 1) + "." + selectedQuizData.question;
+    optionsElement.innerHTML = '';//reset the text tin option buttons
+    selectedQuizData.options.forEach((option, index) => {
+        const optionButton = document.createElement('button');
+        optionButton.textContent = option;
+        optionButton.classList.add('btn');
+        if (option) {
+            optionButton.dataset.option = option === selectedQuizData.correctAnswer ? "true" : "false";
+        }
+        optionButton.addEventListener('click', (fn) => selectAnswer(fn.target));
+        optionsElement.appendChild(optionButton);
+    });
+    
 }
 
 
-function selectAnswer(option) {
-    const selectedOption = option.textContent;
+/*Code to select option button from the user and check it is correct or not*/
+
+/*function selectAnswer(option) {
+    const selectedQuizData = option.textContent;
     const currentQuestion = selectedQuestions[questionNumber].correctAnswer;
 
     if (selectedOption === currentQuestion) {
-        score++;
-        alert("Correct! Your score: " + score);
-    } else {
-        alert("Incorrect!");
-    }
-}
-
-
-
-/*function selectAnswer(optionsElement) {
-    const selectedOption = optionsElement.target;
-    const isCorrect = selectedOption.dataset.option === "true";
-
-    if (isCorrect) {
-        score++;
         alert("Correct!");
     } else {
         alert("Incorrect!");
     }
 }*/
 
-/*function selectAnswer(option) {
+function selectAnswer(selectedOption) {
+    const currentQuestion = quizData[getrandomIndex()].correctAnswer;
 
-    option=document.getElementsByClassName("btn");
-
-    const currentQuestion=selectedQuestions[questionNumber].correctAnswer;
-
-    if(option===currentQuestion.options){
-
-        score++;
-        alert("your score"+score);
-
-    }else{
-
-        alert("incorrect");
-
+    if (selectedOption.dataset.option === "true") {
+        alert("Correct!");
+    } else {
+        alert("Incorrect! The correct answer is: " + currentQuestion);
     }
 
-}*/
+    // Proceed to the next question
+    nextQuestion();
+}
 
 function nextQuestion() {
-    clearInterval(time);
-    questionNumber++;
+    //clearInterval(time);
+    questionNumber++;//increment the question number each time clicks the next button
 
     if (questionNumber < 10) {
         showQuestion();
-        timerBegin(15);
+
+       // timerBegin(15);
     }
     else {
-        alert("quiz finished")
+        alert("well done! you finished your quiz, you scored:"+score);
+        questionNumber = 0;//resetting the question number to 0 before go for next call
+    
     }
 }
 
@@ -349,11 +312,11 @@ function getAnswer() {
 }
 
 function exitQuiz() {
-    // Display a confirmation prompt
-    const confirmExit = confirm("Are you sure you want to exit the quiz?");
+    // get confirmation from the user
+    const confirm = confirm("Are you sure you want to exit the quiz?");
 
-    // If the user confirms, end the quiz or perform other actions
-    if (confirmExit) {
+    // If the user confirms, end the quiz
+    if (confirm) {
 
         alert("Quiz exited. Thank you!");
         resetQuiz();
@@ -366,3 +329,28 @@ function resetQuiz() {
     homePage();
 
 }
+
+
+/*Generating random number*/
+  function getRandomUniqueNumbers(amount, firstNum, maxNum) {
+    if (amount> (maxNum- firstNum + 1)) {
+    
+      return [];
+    }
+
+    var  randomUniqueNumber= [];
+
+    while (randomUniqueNumber.length < amount) {
+      var randomNumber = Math.floor(Math.random() * (maxNum- firstNum+ 1)) + firstNum;
+
+      // Check weather the number already in random number array
+      if (!randomUniqueNumber.includes(randomNumber)) {
+       
+        randomUniqueNumber.push(randomNumber);
+         //if the number is already there it will go get the other random number
+      }
+
+    }
+
+    return randomUniqueNumber;
+  }
