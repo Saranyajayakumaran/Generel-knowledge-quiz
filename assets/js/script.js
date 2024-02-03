@@ -115,8 +115,9 @@ document.addEventListener('DOMContentLoaded', function () {
     let timeLeftElement = document.querySelector(".time .seconds");
     let optionsContainer = document.getElementById("options");
     let startGame = document.getElementsByClassName("continue");
+    let scoreValue = document.getElementById("score");
 
-    
+
 
     homePage();
 
@@ -126,10 +127,10 @@ document.addEventListener('DOMContentLoaded', function () {
     startBtn.addEventListener("click", startQuiz);
     startGame.addEventListener("click", continueWithUsername);
     exitBtn.addEventListener("click", exitQuiz);
-    optionsContainer.addEventListener("click",selectAnswer);
-    
+    optionsContainer.addEventListener("click", selectAnswer);
+
     nextBtn.addEventListener("click", nextQuestion);
-    
+
     //nextBtn[0].addEventListener("click", nextQuestion);
     optBtn.addEventListener("click", showQuestion);
 });
@@ -170,7 +171,7 @@ function gameSection() {
     /*Display only the game area */
 
     /*show only game area when click continue button*/
-    
+
     document.querySelector(".heading").style.display = "none";
     document.querySelector(".start_btn").style.display = "none";
     document.querySelector(".game-info").style.display = "none";
@@ -190,8 +191,8 @@ function continueWithUsername() {
 
         /*Display the game section when user enters the name*/
         gameSection();
-        
-        randomNumbers = getRandomUniqueNumbers(10, 0, (quizData.length-1));
+
+        randomNumbers = getRandomUniqueNumbers(10, 0, (quizData.length - 1));
         //console.log("Generated unique random numbers:", randomNumbers);
 
 
@@ -204,38 +205,36 @@ function continueWithUsername() {
 
 /*Generating random number*/
 function getRandomUniqueNumbers(amount, firstNum, maxNum) {
-    if (amount> (maxNum- firstNum + 1)) {
-    
-      return [];
+    if (amount > (maxNum - firstNum + 1)) {
+
+        return [];
     }
 
-    var  randomUniqueNumber= [];
+    var randomUniqueNumber = [];
 
     while (randomUniqueNumber.length < amount) {
-      var randomNumber = Math.floor(Math.random() * (maxNum- firstNum+ 1)) + firstNum;
+        var randomNumber = Math.floor(Math.random() * (maxNum - firstNum + 1)) + firstNum;
 
-      // Check weather the number already in random number array
-      if (!randomUniqueNumber.includes(randomNumber)) {
-       
-        randomUniqueNumber.push(randomNumber);
-         //if the number is already there it will go get the other random number
-      }
+        // Check weather the number already in random number array
+        if (!randomUniqueNumber.includes(randomNumber)) {
+
+            randomUniqueNumber.push(randomNumber);
+            //if the number is already there it will go get the other random number
+        }
 
     }
 
     return randomUniqueNumber;
-  }
+}
 
 function getIndex() {
 
-    if (questionNumber < randomNumbers.length)
-    {
-        console.log('random number',randomNumbers[questionNumber]);  // You can replace this with your desired action for quiz completion
+    if (questionNumber < randomNumbers.length) {
+        console.log('random number', randomNumbers[questionNumber]);  // You can replace this with your desired action for quiz completion
 
         return randomNumbers[questionNumber];
     }
-    else
-    {
+    else {
         console.error("Error: question number exceeded maximum number of range.");
         return [];
     }
@@ -251,10 +250,10 @@ function showQuestion() {
 
     /*get random index */
     currentQuestionIndex = getIndex();
-    console.log('currentQuestionIndex',currentQuestionIndex);  // You can replace this with your desired action for quiz completion
+    console.log('currentQuestionIndex', currentQuestionIndex);  // You can replace this with your desired action for quiz completion
 
     const currentQuestion = quizData[currentQuestionIndex];
-    console.log('currentQuestion',currentQuestion);  // You can replace this with your desired action for quiz completion
+    console.log('currentQuestion', currentQuestion);  // You can replace this with your desired action for quiz completion
 
     questionElement.innerHTML = (questionNumber + 1) + "." + currentQuestion.question;
     optionsElement.innerHTML = '';//reset the text tin option buttons
@@ -267,7 +266,7 @@ function showQuestion() {
         optionButton.addEventListener('click', () => selectAnswer(option));
         optionsElement.appendChild(optionButton);
     });
-    
+
 }
 
 function nextQuestion() {
@@ -275,15 +274,16 @@ function nextQuestion() {
     questionNumber++;//increment the question number each time clicks the next button
 
     if (questionNumber < 10) {
-        
+
         showQuestion();
-    
-       // timerBegin(15);
+
+        // timerBegin(15);
     }
     else {
-        //displayScore();
+
         alert("quiz finished")
-        
+        displayScore();
+
     }
 }
 
@@ -291,8 +291,8 @@ function nextQuestion() {
 /*Code to select option button from the user and check it is correct or not*/
 
 function selectAnswer(selectedOption) {
-    
-    const currentQuestion=quizData[currentQuestionIndex];
+
+    const currentQuestion = quizData[currentQuestionIndex];
 
     if (selectedOption === currentQuestion.correctAnswer) {
         //alert("Correct!");
@@ -300,6 +300,14 @@ function selectAnswer(selectedOption) {
     } else {
         //alert("Incorrect! The correct answer is: " + currentQuestion.correctAnswer);
     }
+}
+
+function displayScore() {
+    console.log("score increased:" + score)
+    let scoreValue = document.getElementById("score");
+    scoreValue.innerHTML='';
+    scoreValue.innerHTML = 'Your Score: ' + score + ' out of ' + randomNumbers.length;
+
 }
 
 
