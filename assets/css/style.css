@@ -176,14 +176,16 @@ input {
 }
 #score{
 
-    width:85%;
+    width:60%;
     height:fit-content;
     font-size: 20px;
     background-color:#000000;
-    margin:auto;
     color:#ffffff;
-    margin-top:100px;
-
+    margin:300px;
+    padding: 15px; /* Padding around the score block */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Center the text */
+    font-size: 20px; /* Font size */
 
 }
 
