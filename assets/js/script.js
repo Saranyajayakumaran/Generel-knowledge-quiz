@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
     homePage();
 
 
-    /*Event listener for the Continue Button */
+    /*Event listener for Buttons */
     /* Event listener for the Start Quiz button*/
     startBtn.addEventListener("click", startQuiz);
     startGame.addEventListener("click", continueWithUsername);
@@ -184,6 +184,7 @@ function gameSection() {
 
 /*Get user name from the user before starting the quiz*/
 function continueWithUsername() {
+    console.log('continueWithUsername');  // You can replace this with your desired action for quiz completion
     const nameInput = document.getElementById("name").value.trim();
     /*Get user input*/
     if (nameInput === "") {
@@ -204,10 +205,36 @@ function continueWithUsername() {
     }
 }
 
-function getrandomIndex() {
+/*Generating random number*/
+function getRandomUniqueNumbers(amount, firstNum, maxNum) {
+    if (amount> (maxNum- firstNum + 1)) {
+    
+      return [];
+    }
+
+    var  randomUniqueNumber= [];
+
+    while (randomUniqueNumber.length < amount) {
+      var randomNumber = Math.floor(Math.random() * (maxNum- firstNum+ 1)) + firstNum;
+
+      // Check weather the number already in random number array
+      if (!randomUniqueNumber.includes(randomNumber)) {
+       
+        randomUniqueNumber.push(randomNumber);
+         //if the number is already there it will go get the other random number
+      }
+
+    }
+
+    return randomUniqueNumber;
+  }
+
+function getIndex() {
 
     if (questionNumber < randomNumbers.length)
     {
+        console.log('random number',randomNumbers[questionNumber]);  // You can replace this with your desired action for quiz completion
+
         return randomNumbers[questionNumber];
     }
     else
@@ -216,55 +243,37 @@ function getrandomIndex() {
         return [];
     }
 }
+let currentQuestionIndex = 0;
 
 function showQuestion() {
+    console.log('inside show question');  // You can replace this with your desired action for quiz completion
+
     const questionElement = document.getElementById('question');
     const optionsElement = document.getElementById('options');
+    console.log('before get index');  // You can replace this with your desired action for quiz completion
 
     /*get random index */
-    const randomIndex = getrandomIndex();
-    const selectedQuizData = quizData[randomIndex];
-    
-    questionElement.innerHTML = (questionNumber + 1) + "." + selectedQuizData.question;
+    currentQuestionIndex = getIndex();
+    console.log('currentQuestionIndex',currentQuestionIndex);  // You can replace this with your desired action for quiz completion
+
+    const currentQuestion = quizData[currentQuestionIndex];
+    console.log('currentQuestion',currentQuestion);  // You can replace this with your desired action for quiz completion
+
+    questionElement.innerHTML = (questionNumber + 1) + "." + currentQuestion.question;
     optionsElement.innerHTML = '';//reset the text tin option buttons
-    selectedQuizData.options.forEach((option, index) => {
+
+    // Create buttons
+    currentQuestion.options.forEach((option, index) => {
         const optionButton = document.createElement('button');
         optionButton.textContent = option;
         optionButton.classList.add('btn');
-        if (option) {
-            optionButton.dataset.option = option === selectedQuizData.correctAnswer ? "true" : "false";
-        }
-        optionButton.addEventListener('click', (fn) => selectAnswer(fn.target));
+        /*if (option) {
+            optionButton.dataset.option = option === currentQuestion.correctAnswer ? "true" : "false";
+        }*/
+        optionButton.addEventListener('click', () => selectAnswer(option));
         optionsElement.appendChild(optionButton);
     });
     
-}
-
-
-/*Code to select option button from the user and check it is correct or not*/
-
-/*function selectAnswer(option) {
-    const selectedQuizData = option.textContent;
-    const currentQuestion = selectedQuestions[questionNumber].correctAnswer;
-
-    if (selectedOption === currentQuestion) {
-        alert("Correct!");
-    } else {
-        alert("Incorrect!");
-    }
-}*/
-
-function selectAnswer(selectedOption) {
-    const currentQuestion = quizData[getrandomIndex()].correctAnswer;
-
-    if (selectedOption.dataset.option === "true") {
-        alert("Correct!");
-    } else {
-        alert("Incorrect! The correct answer is: " + currentQuestion);
-    }
-
-    // Proceed to the next question
-    nextQuestion();
 }
 
 function nextQuestion() {
@@ -282,6 +291,36 @@ function nextQuestion() {
     
     }
 }
+
+
+
+/*Code to select option button from the user and check it is correct or not*/
+
+/*function selectAnswer(option) {
+    const selectedQuizData = option.textContent;
+    const currentQuestion = selectedQuestions[questionNumber].correctAnswer;
+
+    if (selectedOption === currentQuestion) {
+        alert("Correct!");
+    } else {
+        alert("Incorrect!");
+    }
+}*/
+
+function selectAnswer(selectedOption) {
+    
+    const currentQuestion=quizData[currentQuestionIndex];
+
+    if (selectedOption === currentQuestion.correctAnswer) {
+        alert("Correct!");
+    } else {
+        alert("Incorrect! The correct answer is: " + currentQuestion.correctAnswer);
+    }
+
+    // Proceed to the next question
+    nextQuestion();
+}
+
 
 /*function timerBegin(seconds) {
 
@@ -331,26 +370,3 @@ function resetQuiz() {
 }
 
 
-/*Generating random number*/
-  function getRandomUniqueNumbers(amount, firstNum, maxNum) {
-    if (amount> (maxNum- firstNum + 1)) {
-    
-      return [];
-    }
-
-    var  randomUniqueNumber= [];
-
-    while (randomUniqueNumber.length < amount) {
-      var randomNumber = Math.floor(Math.random() * (maxNum- firstNum+ 1)) + firstNum;
-
-      // Check weather the number already in random number array
-      if (!randomUniqueNumber.includes(randomNumber)) {
-       
-        randomUniqueNumber.push(randomNumber);
-         //if the number is already there it will go get the other random number
-      }
-
-    }
-
-    return randomUniqueNumber;
-  }
