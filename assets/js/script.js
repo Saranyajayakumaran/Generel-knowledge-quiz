@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let nextBtn = document.getElementsByClassName("next");
     let gameArea = document.querySelector(".game-area");
     let questionElement = document.getElementById("question");
-    let timeLeftElement = document.querySelector(".time .seconds");
+    //let timeLeftElement = document.querySelector(".time-left");
     let optionsContainer = document.getElementById("options");
     let startGame = document.getElementsByClassName("continue");
     let scoreValue = document.getElementById("score");
@@ -133,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //nextBtn[0].addEventListener("click", nextQuestion);
     optBtn.addEventListener("click", showQuestion);
+    restartBtn.addEventListener("click", resetQuiz);
 });
 
 let userName = "";
@@ -140,10 +141,12 @@ let score = 0;
 const selectedQuestions = [];
 let questionNumber = 0;
 let time;
+var timeLeft;
 let seconds = 15;
 let answer = [];
 let optionsElement;
 var randomNumbers;
+const numOfQuestions = 10;
 
 function homePage() {
     /*show only heading and start button in home page*/
@@ -152,7 +155,8 @@ function homePage() {
     document.querySelector(".game-info").style.display = "none";
     document.querySelector(".username").style.display = "none";
     document.querySelector(".game-area").style.display = "none";
-    document.getElementById("score").style.display="none";
+    document.getElementById("score").style.display = "none";
+    document.getElementById("restart").style.display = "none";
 
 }
 
@@ -164,7 +168,8 @@ function startQuiz() {
     document.querySelector(".game-info").style.display = "block";
     document.querySelector(".username").style.display = "block";
     document.querySelector(".game-area").style.display = "none";
-    document.getElementById("score").style.display="none";
+    document.getElementById("score").style.display = "none";
+    document.getElementById("restart").style.display = "none";
 
 }
 
@@ -179,7 +184,8 @@ function gameSection() {
     document.querySelector(".game-info").style.display = "none";
     document.querySelector(".username").style.display = "none";
     document.querySelector(".game-area").style.display = "block";
-    document.getElementById("score").style.display="none";
+    document.getElementById("score").style.display = "none";
+    document.getElementById("restart").style.display = "none"
 }
 
 function scoreSection() {
@@ -189,7 +195,8 @@ function scoreSection() {
     document.querySelector(".game-info").style.display = "none";
     document.querySelector(".username").style.display = "none";
     document.querySelector(".game-area").style.display = "none";
-    document.getElementById("score").style.display="block";
+    document.getElementById("score").style.display = "block";
+    document.getElementById("restart").style.display = "block"
 }
 
 
@@ -257,7 +264,6 @@ let currentQuestionIndex = 0;
 
 function showQuestion() {
     console.log('inside show question');  // You can replace this with your desired action for quiz completion
-
     const questionElement = document.getElementById('question');
     const optionsElement = document.getElementById('options');
     console.log('before get index');  // You can replace this with your desired action for quiz completion
@@ -281,13 +287,15 @@ function showQuestion() {
         optionsElement.appendChild(optionButton);
     });
 
+    startTimer();
+
 }
 
 function nextQuestion() {
     //clearInterval(time);
     questionNumber++;//increment the question number each time clicks the next button
 
-    if (questionNumber < 10) {
+    if (questionNumber < numOfQuestions) {
 
         showQuestion();
 
@@ -311,6 +319,7 @@ function selectAnswer(selectedOption) {
     if (selectedOption === currentQuestion.correctAnswer) {
         //alert("Correct!");
         score++;
+        console.log("score increased:" + score);
     } else {
         //alert("Incorrect! The correct answer is: " + currentQuestion.correctAnswer);
     }
@@ -319,13 +328,13 @@ function selectAnswer(selectedOption) {
 function displayScore() {
 
     scoreSection();
-    console.log("score increased:" + score)
+    console.log("score increased:" + score);
     let scoreValue = document.getElementById("score");
     //document.getElementById("score").style.display="block";
     //document.getElementsByClassName(".game-area").style.display="none";
-    scoreValue.innerHTML='';
+    scoreValue.innerHTML = '';
     scoreValue.innerHTML = 'Your Score: ' + score + ' out of ' + randomNumbers.length;
-    
+
 
 }
 
@@ -344,33 +353,60 @@ function exitQuiz() {
 }
 
 function resetQuiz() {
+    // Reset everyting before go to home page
+    userName = "";
+    score = 0;
+    selectedQuestions.length = 0;
+    time = undefined;
+    seconds = 15;
+    optionsElement = undefined;
+    currentQuestionIndex = 0;
+    answer.length = 0;
+    questionNumber = 0;
+    randomNumbers = undefined;
+
+    // Reset UI elemens
+    let nameInput = document.getElementById("name");
+    let scoreValue = document.getElementById("score");
+    let questionElement = document.getElementById("question");
+    let optionsContainer = document.getElementById("options");
+
+    nameInput.value = "";
+    scoreValue.innerHTML = "";
+    questionElement.innerHTML = "";
+    optionsContainer.innerHTML = "";
 
     homePage();
-
 }
 
-/*function timerBegin(seconds) {
+function startTimer() {
+    let remainingTime = seconds;
+    let countdown = setInterval(() => {
+        
+        let timeLeftElement=document.querySelector(".time-left");
 
-    var timeLeft = seconds;
+        timeLeftElement.innerHTML = "";
 
-    displayUpdatedTime(timeLeft);
+        timeLeftElement.innerHTML = `Time left: ${remainingTime}`;
 
-    time = setInterval(function () {
-        if (timeLeft >= 0) {
-            displayUpdatedTime(timeLeft);
-            timeLeft--;
-        } else {
-            clearInterval(time);
-            nextQuestion();
+        if (remainingTime <= 0) {
+            clearInterval(countdown);
+            //timeLeftElement.innerHTML = 'Time expired!';
+
+            // Move to the next question
+            questionNumber++;
+
+            // Check if there are more questions or show the final result
+            if (questionNumber < numOfQuestions) {
+                setTimeout(() => {
+                    nextQuestion();
+                }, 2000); // Wait for 2 seconds before loading the next question
+            } else {
+                console.log('Quiz completed.');  // You can replace this with your desired action for quiz completion
+            }
         }
 
-    }, 1000);
+        remainingTime--;
+    }, 1000); // Update every second
 }
-
-function displayUpdatedTime(timeLeft) {
-
-    document.getElementsByClassName("time-left").innerHTML = "Time Left:" + timeLeft + "seconds";
-
-}*/
-
 
