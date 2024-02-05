@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let optionsContainer = document.getElementById("options");
     let startGame = document.getElementsByClassName("continue");
     let scoreValue = document.getElementById("score");
-    let restartBtn=document.getElementById("restart")
+    let restartBtn = document.getElementById("restart")
 
 
 
@@ -213,9 +213,8 @@ function continueWithUsername() {
 
         randomNumbers = getRandomUniqueNumbers(10, 0, (quizData.length - 1));
         //console.log("Generated unique random numbers:", randomNumbers);
-
-
-        showQuestion();
+        
+        nextQuestion();
 
         alert("Quiz started! Welcome to GK QUIZ, " + nameInput + "!");
 
@@ -285,16 +284,16 @@ function showQuestion() {
         optionsElement.appendChild(optionButton);
     });
 
-    startTimer();
-
 }
 
 function nextQuestion() {
-   
-    questionNumber++;//increment the question number each time clicks the next button
+
+
     if (questionNumber < numOfQuestions) {
 
-        showQuestion();        
+        showQuestion();
+        startTimer();
+        questionNumber++;//increment the question number each time clicks the next button
     }
     else {
 
@@ -318,7 +317,6 @@ function selectAnswer(selectedOption) {
     } else {
         //alert("Incorrect! The correct answer is: " + currentQuestion.correctAnswer);
     }
-    nextQuestion();
 }
 
 function displayScore() {
@@ -379,19 +377,18 @@ let globalCountDownTimer_Id = 0;
 function startTimer() {
     let remainingTime = seconds;
     let timeLeftElement = document.querySelector(".time-left");
-    
+
     /* Check already a timer instance created and running then stop before new instance*/
-    if(globalCountDownTimer_Id != 0)
-    {
+    if (globalCountDownTimer_Id != 0) {
         stopTimer();
     }
 
     globalCountDownTimer_Id = setInterval(() => {
         timeLeftElement.innerHTML = `Time left: ${remainingTime}`;
-       
+
         if (remainingTime <= 0) {
             stopTimer();
-          
+
             // Check if there are more questions or show the final result
             if (questionNumber < numOfQuestions) {
                 setTimeout(() => {
