@@ -70,7 +70,7 @@ const quizData = [
     },
     {
         question: "Who was the first person to step foot on the moon in 1969?",
-        options: ["Neil Armstrong ", "Buzz Aldrin", "Michael Collins", "Yuri Gagarin"],
+        options: ["Neil Armstrong", "Buzz Aldrin", "Michael Collins", "Yuri Gagarin"],
         correctAnswer: "Neil Armstrong",
         used: false
 
@@ -213,7 +213,7 @@ function continueWithUsername() {
 
         randomNumbers = getRandomUniqueNumbers(10, 0, (quizData.length - 1));
         //console.log("Generated unique random numbers:", randomNumbers);
-        
+
         nextQuestion();
 
         alert("Quiz started! Welcome to GK QUIZ, " + nameInput + "!");
@@ -260,22 +260,20 @@ function getIndex() {
 let currentQuestionIndex = 0;
 
 function showQuestion() {
-    console.log('inside show question');  // You can replace this with your desired action for quiz completion
+
     const questionElement = document.getElementById('question');
     const optionsElement = document.getElementById('options');
-    console.log('before get index');  // You can replace this with your desired action for quiz completion
 
     /*get random index */
     currentQuestionIndex = getIndex();
-    console.log('currentQuestionIndex', currentQuestionIndex);  // You can replace this with your desired action for quiz completion
 
     const currentQuestion = quizData[currentQuestionIndex];
-    console.log('currentQuestion', currentQuestion);  // You can replace this with your desired action for quiz completion
+
 
     questionElement.innerHTML = (questionNumber + 1) + "." + currentQuestion.question;
     optionsElement.innerHTML = '';//reset the text tin option buttons
 
-    // Create buttons
+    // display the answer options of selected questions
     currentQuestion.options.forEach((option, index) => {
         const optionButton = document.createElement('button');
         optionButton.textContent = option;
@@ -288,14 +286,16 @@ function showQuestion() {
 
 function nextQuestion() {
 
-
     if (questionNumber < numOfQuestions) {
 
+        //optionButtonsDisable();
         showQuestion();
         startTimer();
+          
         questionNumber++;//increment the question number each time clicks the next button
     }
     else {
+
 
         alert("quiz finished");
         displayScore();
@@ -310,24 +310,41 @@ function selectAnswer(selectedOption) {
 
     const currentQuestion = quizData[currentQuestionIndex];
 
+    const optionButtons = document.querySelectorAll(".btn");
+//display the correct answer buton and wrong anser in red
+   
+    optionButtonsDisable();// call the function to disable the option buttons 
+    
+    optionButtons.forEach(button=>{
+        if (button.textContent === currentQuestion.correctAnswer) {
+            button.classList.add("correct");
+        } else if (button.textContent === selectedOption) {
+            button.classList.add("incorrect");
+        }
+    });
+
     if (selectedOption === currentQuestion.correctAnswer) {
-        //alert("Correct!");
         score++;
         console.log("score increased:" + score);
-    } else {
-        //alert("Incorrect! The correct answer is: " + currentQuestion.correctAnswer);
-    }
+    } 
+       
+}
+  //option buttons disabled to avoid further clicks after select the answer 
+function optionButtonsDisable(){
+    let optionButtons=document.querySelectorAll(".btn");
+    optionButtons.forEach(button=>{
+    button.disabled=true;
+    });
 }
 
 function displayScore() {
 
     scoreSection();
-    console.log("score increased:" + score);
+    console.log("score increased:" + score);// to check the score in console
     let scoreValue = document.getElementById("score");
-    //document.getElementById("score").style.display="block";
-    //document.getElementsByClassName(".game-area").style.display="none";
+    let nameInput = document.getElementById("name").value.trim();
     scoreValue.innerHTML = '';
-    scoreValue.innerHTML = 'Your Score: ' + score + ' out of ' + randomNumbers.length;
+    scoreValue.innerHTML = 'Congragulation!' + nameInput +  'Your Score:'  + score +  'out of'  + randomNumbers.length;
 
 }
 
@@ -392,6 +409,7 @@ function startTimer() {
             // Check if there are more questions or show the final result
             if (questionNumber < numOfQuestions) {
                 setTimeout(() => {
+
                     nextQuestion();
                 }, 2000); // Wait for 2 seconds before loading the next question
             } else {
@@ -402,8 +420,8 @@ function startTimer() {
         remainingTime--;
     }, 1000); // Update every second
 }
-
 function stopTimer() {
     /* stop interval timer using timerId */
     clearInterval(globalCountDownTimer_Id);
 }
+

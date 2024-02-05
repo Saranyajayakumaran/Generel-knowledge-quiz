@@ -153,9 +153,15 @@ input {
     
 }
 
-.btn:hover{
+/*.btn:hover{
     background-color:rgb(97, 65, 240);
     color:#ffffff;
+}*/
+.correct{
+    background:#9aeabc;
+}
+.incorrect{
+    background:#ff9393;
 }
 
 .next button {
@@ -188,14 +194,33 @@ input {
     background-color:#000000;
     color:#ffffff;
     margin:300px;
-    margin-left:600px;
+    margin-left:20px;
     padding: 15px; /* Padding around the score block */
     border-radius: 10px; /* Rounded corners */
     text-align: center; /* Center the text */
     font-size: 20px; /* Font size */
+    display:block;
 
 }
+   
 
+#restart {
+    display: block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin:auto;
+    padding-top:0px;
+    margin-bottom:400px
+}
+
+#restart:hover {
+    background-color: #45a049;
+}
 /* Media query:tablets and larger(768px and up*/
 @media screen and (min-width:768px) {
     .heading {
@@ -271,6 +296,7 @@ input {
         font-size: 30px;
 
     }
+
 }
 
 /*media query tblet */
@@ -304,8 +330,12 @@ input {
 
 
     }
+    .btn:hover{
+        background-color:rgb(97, 65, 240);
+        color:#ffffff;
+    }
     .next{
-        margin-left: 130px;
+       margin-left: 130px;
     }
 
 
