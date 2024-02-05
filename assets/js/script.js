@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let optionsContainer = document.getElementById("options");
     let startGame = document.getElementsByClassName("continue");
     let scoreValue = document.getElementById("score");
+    let restartBtn=document.getElementById("restart")
 
 
 
@@ -128,10 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
     startGame.addEventListener("click", continueWithUsername);
     exitBtn.addEventListener("click", exitQuiz);
     optionsContainer.addEventListener("click", selectAnswer);
-
     nextBtn.addEventListener("click", nextQuestion);
-
-    //nextBtn[0].addEventListener("click", nextQuestion);
     optBtn.addEventListener("click", showQuestion);
     restartBtn.addEventListener("click", resetQuiz);
 });
@@ -292,18 +290,15 @@ function showQuestion() {
 }
 
 function nextQuestion() {
-    //clearInterval(time);
+   
     questionNumber++;//increment the question number each time clicks the next button
-
     if (questionNumber < numOfQuestions) {
 
-        showQuestion();
-
-        // timerBegin(15);
+        showQuestion();        
     }
     else {
 
-        alert("quiz finished")
+        alert("quiz finished");
         displayScore();
 
     }
@@ -323,6 +318,7 @@ function selectAnswer(selectedOption) {
     } else {
         //alert("Incorrect! The correct answer is: " + currentQuestion.correctAnswer);
     }
+    nextQuestion();
 }
 
 function displayScore() {
@@ -334,7 +330,6 @@ function displayScore() {
     //document.getElementsByClassName(".game-area").style.display="none";
     scoreValue.innerHTML = '';
     scoreValue.innerHTML = 'Your Score: ' + score + ' out of ' + randomNumbers.length;
-
 
 }
 
@@ -379,23 +374,24 @@ function resetQuiz() {
     homePage();
 }
 
+let globalCountDownTimer_Id = 0;
+
 function startTimer() {
     let remainingTime = seconds;
-    let countdown = setInterval(() => {
-        
-        let timeLeftElement=document.querySelector(".time-left");
+    let timeLeftElement = document.querySelector(".time-left");
+    
+    /* Check already a timer instance created and running then stop before new instance*/
+    if(globalCountDownTimer_Id != 0)
+    {
+        stopTimer();
+    }
 
-        timeLeftElement.innerHTML = "";
-
+    globalCountDownTimer_Id = setInterval(() => {
         timeLeftElement.innerHTML = `Time left: ${remainingTime}`;
-
+       
         if (remainingTime <= 0) {
-            clearInterval(countdown);
-            //timeLeftElement.innerHTML = 'Time expired!';
-
-            // Move to the next question
-            questionNumber++;
-
+            stopTimer();
+          
             // Check if there are more questions or show the final result
             if (questionNumber < numOfQuestions) {
                 setTimeout(() => {
@@ -410,3 +406,7 @@ function startTimer() {
     }, 1000); // Update every second
 }
 
+function stopTimer() {
+    /* stop interval timer using timerId */
+    clearInterval(globalCountDownTimer_Id);
+}
