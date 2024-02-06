@@ -1,7 +1,7 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -9,17 +9,18 @@ body {
     margin: 0;
     padding: 0;
     background: #FFBA00;
-    width:100%;
-    height:100vh;
+    width: 105%;
+    height: 105vh;
     background-size: cover;
-    background-position:cover;
+    background-position: cover;
     background-repeat: no-repeat;
-    display:flex;
-    flex-direction:column;
-    
+    display: flex;
+    flex-direction: column;
+
     /* Ensure the background covers the entire viewport height */
 
 }
+
 .heading {
     background: #000000;
     height: fit-content;
@@ -33,7 +34,7 @@ body {
     align-items: center;
     width: fit-content;
     margin: 20px;
-    
+
 }
 
 /*change the logo size to fit with the heading*/
@@ -60,7 +61,7 @@ body {
     padding-bottom: 20px;
     margin-bottom: 20px;
     font-size: 20px;
-    margin-left:30px;
+    margin-left: 30px;
 }
 
 .username,
@@ -83,15 +84,17 @@ input {
 
 .time {
     padding: 20px;
-    padding-left: 160px;
+    padding-left: 140px;
     flex-direction: row;
     display: flex;
     font-size: 13px;
 }
 
 
-#questions{
-    margin-left:15px;
+#questions,
+h2 {
+    padding: 10px;
+    text-align: left;
 }
 
 #options {
@@ -147,18 +150,19 @@ input {
     background-color: #ffffff;
     color: #000000;
     border-radius: 5px;
-    
+
 }
 
 /*.btn:hover{
     background-color:rgb(97, 65, 240);
     color:#ffffff;
 }*/
-.correct{
-    background:#9aeabc;
+.correct {
+    background: #9aeabc;
 }
-.incorrect{
-    background:#ff9393;
+
+.incorrect {
+    background: #ff9393;
 }
 
 .next button {
@@ -168,55 +172,61 @@ input {
     background-color: #ffffff;
     color: #000000;
     border-radius: 5px;
-    margin-left:80px;
-    
-    
+    margin-left: 80px;
+
+
 }
 
 #question h2 {
     padding-left: 20px;
 
 }
-#score{
 
-    width:250px;
+#score {
+
+    width: 250px;
     font-size: 20px;
-    background-color:#000000;
-    color:#ffffff;
-    margin-top:200px;
-    margin-left:15px;
-    margin-bottom:20px;
-    padding: 15px; /* Padding around the score block */
-    border-radius: 10px; /* Rounded corners */
-    text-align: center; /* Center the text */
-    font-size: 20px; /* Font size */
-    display:block;
-    
+    background-color: #000000;
+    color: #ffffff;
+    margin-top: 200px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    /* Padding around the score block */
+    border-radius: 10px;
+    /* Rounded corners */
+    text-align: center;
+    /* Center the text */
+    font-size: 20px;
+    /* Font size */
+    display: block;
+
 
 }
-   
+
 
 #restart {
     width: 140px;
     height: 60px;
     display: block;
-    margin-top:40px;
+    margin-top: 40px;
     padding: 30px;
     background-color: #000000;
     color: #fff;
     text-decoration: none;
     border-radius: 10px;
-    margin:auto;
+    margin: auto;
     cursor: pointer;
-    padding-top:5px;
-    text-align:center;
-    font-size:20px;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 20px;
 }
 
 #restart:hover {
     background-color: #fcfcfc;
-    color:#000000;
+    color: #000000;
 }
+
 /* Media query:tablets and larger(768px and up*/
 @media screen and (min-width:768px) {
     .heading {
@@ -225,8 +235,7 @@ input {
         margin: auto;
         margin-top: 100px;
         padding-left: 50px;
-        margin-bottom:20px
-
+        margin-bottom: 20px
     }
 
     .heading h1 {
@@ -252,6 +261,7 @@ input {
 
         padding: 30px;
         margin: 120px;
+        margin-top: 20px;
         padding-left: 10px;
         width: 550px;
     }
@@ -269,15 +279,17 @@ input {
     }
 
     .time {
-        padding-left: 450px;
+        padding-left: 380px;
         font-size: 25px;
     }
+
+
 
     .game-area {
         width: 600px;
         padding: 30px;
-        margin: 50px;
-        margin-top:200px;
+        margin: 80px;
+        margin-top: 200px;
     }
 
     #question h2 {
@@ -285,38 +297,45 @@ input {
         font-size: 30px;
 
     }
-    .next button{
-        margin-left:200px;
-    }
-    #score{
 
-        width:400px;
-        height:100px;
-        margin-left:180px;
+    .next button {
+        margin-left: 2l0px;
+    }
+
+    #score {
+
+        width: 400px;
+        height: 100px;
+        margin-left: 180px;
     }
 }
 
 /*media query ipad pro */
 
 @media screen and (min-width: 1024px) {
+    body {
+        height: 130vh;
+        /*increase height for fit content*/
+    }
 
     .heading {
         margin: auto;
         margin-top: 90px;
         padding-left: 50px;
-        margin-bottom:20px
-
-    }
-    .game-info,
-    .game-area {
-        flex-direction: row;
-        justify-content: space-between;
+        margin-bottom: 20px
     }
 
-    .game-area {
-        align-content: center;
-        padding-left: 50px;
+    .game-info {
+        margin-left: 220px;
 
+    }
+
+    .game-area {
+        margin: 200px;
+    }
+
+    #options .btn {
+        margin: 10px
     }
 
     .start_btn button {
@@ -325,15 +344,20 @@ input {
 
 
     }
-    .btn:hover{
-        background-color:rgb(97, 65, 240);
-        color:#ffffff;
+
+    .btn:hover {
+        background-color: rgb(97, 65, 240);
+        color: #ffffff;
     }
-    .next{
-       margin-left: 130px;
+
+    .next {
+        margin: 15px;
+        margin-left: 1px;
+
     }
-    #score{
-        margin-left:300px;
+
+    #score {
+        margin-left: 300px;
     }
 
 
@@ -343,25 +367,45 @@ input {
 @media screen and (min-width: 1280px) {
 
     .start_btn button {
-        margin-left: 570px;
+        margin-left: 580px;
         text-align: center;
 
 
+    }
+
+    #questions,
+    h2 {
+        padding-left: 20px;
+    }
+    .time {
+        padding-left: 380px;
+        font-size: 20px;
+    }
+
+
+    .options {
+        padding: 10px;
+    }
+
+    .game-info {
+        margin-left: 360px;
     }
 
     .game-area {
         align-content: center;
         padding-left: 50px;
         margin-left: 300px;
-        margin-top:100px;
+        margin-top: 100px;
 
     }
-    #score{
-        margin-left:420px;
-        margin-bottom:40px;
+
+    #score {
+        margin-left: 420px;
+        margin-bottom: 40px;
     }
-    #restart{
-        margin-left:550px;
+
+    #restart {
+        margin-left: 550px;
     }
 }
 
@@ -376,7 +420,7 @@ input {
     .game-area {
         align-content: center;
         padding-left: 50px;
-        margin-left: 420px;
+        margin-left: 600px;
     }
 
 }
