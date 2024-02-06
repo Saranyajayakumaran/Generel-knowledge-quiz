@@ -180,12 +180,6 @@ input {
     padding-left: 20px;
 
 }
-.score-container{
-    width:fit-content;
-    height:fit-content;
-    background-color :#ffffff;
-
-}
 #score{
 
     width:200px;
@@ -284,12 +278,6 @@ input {
         font-size: 25px;
     }
 
-    /*.next button {
-        padding: 20px 40px;
-        margin: 20px;
-        margin-left: 200px;
-    }*/
-
     .game-area {
         width: 600px;
         padding: 30px;
@@ -302,7 +290,15 @@ input {
         font-size: 30px;
 
     }
+    .next button{
+        margin-left:200px;
+    }
+    #score{
 
+        width:250px;
+        height:80px;
+        margin-left:240px;
+    }
 }
 
 /*media query tblet */

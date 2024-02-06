@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let questionElement = document.getElementById("question");
     //let timeLeftElement = document.querySelector(".time-left");
     let optionsContainer = document.getElementById("options");
-    let continueBtn= document.getElementsByClassName(".continue");
+    let continueBtn = document.getElementsByClassName(".continue");
     let scoreValue = document.getElementById("score");
     let restartBtn = document.getElementById("restart")
 
@@ -291,7 +291,7 @@ function nextQuestion() {
         //optionButtonsDisable();
         showQuestion();
         startTimer();
-          
+
         questionNumber++;//increment the question number each time clicks the next button
     }
     else {
@@ -311,11 +311,11 @@ function selectAnswer(selectedOption) {
     const currentQuestion = quizData[currentQuestionIndex];
 
     const optionButtons = document.querySelectorAll(".btn");
-//display the correct answer buton and wrong anser in red
-   
+    //display the correct answer buton and wrong anser in red
+
     optionButtonsDisable();// call the function to disable the option buttons 
-    
-    optionButtons.forEach(button=>{
+
+    optionButtons.forEach(button => {
         if (button.textContent === currentQuestion.correctAnswer) {
             button.classList.add("correct");
         } else if (button.textContent === selectedOption) {
@@ -326,14 +326,14 @@ function selectAnswer(selectedOption) {
     if (selectedOption === currentQuestion.correctAnswer) {
         score++;
         console.log("score increased:" + score);
-    } 
-       
+    }
+
 }
-  //option buttons disabled to avoid further clicks after select the answer 
-function optionButtonsDisable(){
-    let optionButtons=document.querySelectorAll(".btn");
-    optionButtons.forEach(button=>{
-    button.disabled=true;
+//option buttons disabled to avoid further clicks after select the answer 
+function optionButtonsDisable() {
+    let optionButtons = document.querySelectorAll(".btn");
+    optionButtons.forEach(button => {
+        button.disabled = true;
     });
 }
 
@@ -344,17 +344,24 @@ function displayScore() {
     let scoreValue = document.getElementById("score");
     let nameInput = document.getElementById("name").value.trim();
     scoreValue.innerHTML = '';
-    scoreValue.textContent = 'Well done! ' + nameInput +  '    Your Score: '  + score +  ' out of '  + randomNumbers.length;
+    
+    if (score < 5) {
+
+        scoreValue.textContent = 'Well done! ' + nameInput + '  Your Score:' + score + ' out of ' + randomNumbers.length + '  You can improve next time';
+
+    } else {
+        scoreValue.textContent = 'Well done! ' + nameInput + '  Your Score: ' + score + ' out of ' + randomNumbers.length + ' Great Job';
+    }
 
 }
 
 
 function exitQuiz() {
     // get confirmation from the user
-    const confirm = confirm("Are you sure you want to exit the quiz?");
+    const confirmExit = confirm("Are you sure you want to exit the quiz?");
 
     // If the user confirms, end the quiz
-    if (confirm) {
+    if (confirmExit) {
 
         alert("Quiz exited. Thank you!");
         homePage();
