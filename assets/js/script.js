@@ -351,10 +351,10 @@ function displayScore() {
 
 function exitQuiz() {
     // get confirmation from the user
-    const confirmExit = confirm("Are you sure you want to exit the quiz?");
+    const confirm = confirm("Are you sure you want to exit the quiz?");
 
     // If the user confirms, end the quiz
-    if (confirmExit) {
+    if (confirm) {
 
         alert("Quiz exited. Thank you!");
         homePage();
@@ -385,7 +385,6 @@ function resetQuiz() {
     scoreValue.innerHTML = "";
     questionElement.innerHTML = "";
     optionsContainer.innerHTML = "";
-
     homePage();
 }
 
