@@ -153,10 +153,10 @@ h2 {
 
 }
 
-/*.btn:hover{
-    background-color:rgb(97, 65, 240);
+.btn:hover{
+    background-color:rgb(201 192 245 / 50%);
     color:#ffffff;
-}*/
+}
 .correct {
     background: #9aeabc;
 }
@@ -343,11 +343,6 @@ h2 {
         text-align: center;
 
 
-    }
-
-    .btn:hover {
-        background-color: rgb(97, 65, 240);
-        color: #ffffff;
     }
 
     .next {
