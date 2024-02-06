@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let nextBtn = document.getElementsByClassName(".next");
     let gameArea = document.querySelector(".game-area");
     let questionElement = document.getElementById("question");
-    //let timeLeftElement = document.querySelector(".time-left");
+    let timeLeftElement = document.querySelector(".time-left");
     let optionsContainer = document.getElementById("options");
     let continueBtn = document.getElementsByClassName(".continue");
     let scoreValue = document.getElementById("score");
