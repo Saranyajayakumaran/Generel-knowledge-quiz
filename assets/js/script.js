@@ -108,13 +108,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let nameInput = document.getElementById("name");
     let startBtn = document.querySelector(".start_btn button");
-    let exitBtn = document.getElementsByClassName("exit");
-    let nextBtn = document.getElementsByClassName("next");
+    let exitBtn = document.getElementsByClassName(".exit");
+    let nextBtn = document.getElementsByClassName(".next");
     let gameArea = document.querySelector(".game-area");
     let questionElement = document.getElementById("question");
     //let timeLeftElement = document.querySelector(".time-left");
     let optionsContainer = document.getElementById("options");
-    let startGame = document.getElementsByClassName("continue");
+    let continueBtn= document.getElementsByClassName(".continue");
     let scoreValue = document.getElementById("score");
     let restartBtn = document.getElementById("restart")
 
@@ -126,12 +126,12 @@ document.addEventListener('DOMContentLoaded', function () {
     /*Event listener for Buttons */
     /* Event listener for the Start Quiz button*/
     startBtn.addEventListener("click", startQuiz);
-    startGame.addEventListener("click", continueWithUsername);
+    continueBtn.addEventListener("click", continueWithUsername);
     exitBtn.addEventListener("click", exitQuiz);
     optionsContainer.addEventListener("click", selectAnswer);
     nextBtn.addEventListener("click", nextQuestion);
     optBtn.addEventListener("click", showQuestion);
-    restartBtn.addEventListener("click", resetQuiz);
+    restartBtn.addEventListener("click", resetQuiz);//restart quiz
 });
 
 let userName = "";
@@ -344,20 +344,20 @@ function displayScore() {
     let scoreValue = document.getElementById("score");
     let nameInput = document.getElementById("name").value.trim();
     scoreValue.innerHTML = '';
-    scoreValue.innerHTML = 'Congragulation!' + nameInput +  'Your Score:'  + score +  'out of'  + randomNumbers.length;
+    scoreValue.textContent = 'Well done! ' + nameInput +  '    Your Score: '  + score +  ' out of '  + randomNumbers.length;
 
 }
 
 
 function exitQuiz() {
     // get confirmation from the user
-    const confirm = confirm("Are you sure you want to exit the quiz?");
+    const confirmExit = confirm("Are you sure you want to exit the quiz?");
 
     // If the user confirms, end the quiz
-    if (confirm) {
+    if (confirmExit) {
 
         alert("Quiz exited. Thank you!");
-        resetQuiz();
+        homePage();
 
     }
 }

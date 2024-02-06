@@ -188,38 +188,44 @@ input {
 }
 #score{
 
-    width:fit-content;
-    height:fit-content;
+    width:200px;
+    height:80px;
     font-size: 20px;
     background-color:#000000;
     color:#ffffff;
-    margin:300px;
+    margin-top:200px;
     margin-left:20px;
+    margin-bottom:20px;
     padding: 15px; /* Padding around the score block */
     border-radius: 10px; /* Rounded corners */
     text-align: center; /* Center the text */
     font-size: 20px; /* Font size */
     display:block;
+    
 
 }
    
 
 #restart {
+    width: 140px;
+    height: 60px;
     display: block;
-    margin-top: 15px;
-    padding: 10px 20px;
+    margin-top:40px;
+    padding: 20px;
     background-color: #000000;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    cursor: pointer;
     margin:auto;
-    padding-top:0px;
-    margin-bottom:400px
+    cursor: pointer;
+    padding-top:5px;
+    text-align:center;
+    font-size:20px;
 }
 
 #restart:hover {
-    background-color: #45a049;
+    background-color: #fcfcfc;
+    color:#000000;
 }
 /* Media query:tablets and larger(768px and up*/
 @media screen and (min-width:768px) {
