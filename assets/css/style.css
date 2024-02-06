@@ -306,14 +306,14 @@ h2 {
     }
 
     .next button {
-        margin-left: 2l0px;
+        margin-left: 220px;
     }
 
     #score {
 
         width: 400px;
         height: 100px;
-        margin-left: 180px;
+        margin-left: 200px;
     }
 }
 
@@ -334,6 +334,7 @@ h2 {
 
     .game-info {
         margin-left: 250px;
+        height:400px;
 
     }
 
