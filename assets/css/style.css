@@ -362,10 +362,8 @@ h2 {
 @media screen and (min-width: 1280px) {
 
     .start_btn button {
-        margin-left: 580px;
+        margin-left: 600px;
         text-align: center;
-
-
     }
 
     #questions,
@@ -383,7 +381,7 @@ h2 {
     }
 
     .game-info {
-        margin-left: 360px;
+        margin-left: 380px;
     }
 
     .game-area {
@@ -408,14 +406,25 @@ h2 {
 
 @media screen and (min-width: 1504px) {
     .start_btn button {
-        margin-left: 700px;
+        margin-left: 740px;
         text-align: center;
+    }
+    .game-info {
+        margin-left: 510px;
     }
 
     .game-area {
         align-content: center;
         padding-left: 50px;
+        margin-top:200px;
+        margin-left:500px;
+    }
+    #score {
         margin-left: 600px;
+        margin-bottom: 60px;
     }
 
+    #restart {
+        margin-left: 730px;
+    }
 }
