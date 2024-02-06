@@ -326,7 +326,7 @@ h2 {
     }
 
     .game-info {
-        margin-left: 220px;
+        margin-left: 250px;
 
     }
 
@@ -339,7 +339,7 @@ h2 {
     }
 
     .start_btn button {
-        margin-left: 450px;
+        margin-left: 480px;
         text-align: center;
 
 
@@ -352,12 +352,12 @@ h2 {
 
     .next {
         margin: 15px;
-        margin-left: 1px;
+        margin-left:135px;
 
     }
 
     #score {
-        margin-left: 300px;
+        margin-left: 340px;
     }
 
 
