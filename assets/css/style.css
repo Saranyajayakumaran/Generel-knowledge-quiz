@@ -321,7 +321,7 @@ h2 {
 
 @media screen and (min-width: 1024px) {
     body {
-        height: 130vh;
+        height: 100vh;
         /*increase height for fit content*/
     }
 
@@ -334,7 +334,7 @@ h2 {
 
     .game-info {
         margin-left: 250px;
-        height:400px;
+        height:430px;
 
     }
 
@@ -355,7 +355,7 @@ h2 {
 
     .next {
         margin: 15px;
-        margin-left:135px;
+    
 
     }
 
