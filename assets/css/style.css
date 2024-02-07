@@ -8,10 +8,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background: #FFBA00;
-    width: 105%;
-    height: 110vh;
-    background:url("assets\images\BACKGROUND.webp");
+    background:linear-gradient(150deg,#d6c6fa,#44058d);
+    width: 100%;
+    height: 100vh;
     background-size: cover;
     background-position: cover;
     background-repeat: no-repeat;
@@ -23,7 +22,7 @@ body {
 }
 
 .heading {
-    background: #000000;
+    background:rgba(0, 0, 0, 0.7);
     height: fit-content;
     text-align: center;
     color: #ffffff;
@@ -35,7 +34,7 @@ body {
     align-items: center;
     width: fit-content;
     margin: 25px;
-    margin-left:35px;
+    margin-left:15px;
 
 }
 
@@ -51,13 +50,13 @@ body {
     line-height: 1.6;
     width: fit-content;
     height: 690px;
-    background: #000000;
+    background: rgba(0, 0, 0, 0.7);
     color: white;
     margin: 25px;
     margin-left:10px;
     padding-right: 15px;
     margin-bottom: 5px;
-    margin-left:35px;
+    margin-left:15px;
 
 }
 
@@ -75,20 +74,20 @@ body {
 input {
     font-size: 20px;
     text-align: center;
-    color: #000000;
+    color:rgba(0, 0, 0);
     margin:10px;
-    margin-left:15px;
+    margin-left:1px;
 }
 
 .game-area {
-    background: #000000;
+    background: rgba(0, 0, 0, 0.7);
     width: 85%;
     font-size: 15px;
     color: #ffffff;
     margin: 20px;
     padding-bottom: 10px;
     margin-top: 100px;
-    margin-left:30px;
+    margin-left:15px;
 }
 
 .time {
@@ -141,7 +140,7 @@ h2 {
     margin-left: 70px;
     border-radius: 5px;
     color: #ffffff;
-    background-color: #000000;
+    background-color:rgba(0, 0, 0);
     font-size: 20px;
     margin: 100px;
 }
@@ -196,10 +195,10 @@ h2 {
 
     width: 250px;
     font-size: 20px;
-    background-color: #000000;
+    background-color:rgba(0, 0, 0, 0.7);;
     color: #ffffff;
     margin-top: 200px;
-    margin-left: 30px;
+    margin-left: 15px;
     margin-bottom: 20px;
     padding: 15px;
     /* Padding around the score block */
@@ -219,7 +218,7 @@ h2 {
     display: block;
     margin-top: 40px;
     padding: 30px;
-    background-color: #000000;
+    background-color:rgba(0, 0, 0);
     color: #fff;
     text-decoration: none;
     border-radius: 10px;
@@ -231,12 +230,18 @@ h2 {
 }
 
 #restart:hover {
-    background-color: #fcfcfc;
+    background-color: #756a6a;
     color: #000000;
 }
 
 /* Media query:tablets and larger(768px and up*/
 @media screen and (min-width:768px) {
+
+    body {
+        height: 100vh;
+        /*increase height for fit content*/
+    }
+
     .heading {
 
         width: 400px;
@@ -272,6 +277,7 @@ h2 {
         margin-top: 20px;
         padding-left: 10px;
         width: 550px;
+        height:420px;
     }
 
     .info {
@@ -348,7 +354,7 @@ h2 {
     }
 
     .start_btn button {
-        margin-left: 480px;
+        margin-left: 440px;
         text-align: center;
 
 
@@ -362,7 +368,7 @@ h2 {
     }
 
     #score {
-        margin-left: 340px;
+        margin-left: 310px;
     }
 
 
@@ -415,29 +421,35 @@ h2 {
 /*media query desktop*/
 
 @media screen and (min-width: 1504px) {
+
+    body {
+        height: 110vh;
+        /*increase height for fit content*/
+    }
+
     .heading {
-        margin-left:650px;
+        margin-left:550px;
     }
     .username{
         margin:10px;
-        margin-left:100px;
+        margin-left:20px;
         text-align: center;
         align-items:center;
 
     }
     .start_btn button {
-        margin-left:790px;
+        margin-left:700px;
         text-align: center;
     }
     .game-info {
-        margin-left:580px;
+        margin-left:480px;
     }
 
     .game-area {
         align-content: center;
         padding-left: 50px;
         margin-top:180px;
-        margin-left:550px;
+        margin-left:450px;
     }
     #question h2 {
         padding-left:0px;
