@@ -240,7 +240,7 @@ function continueWithUsername() {
     if (nameInput === "") {
         alert("Please enter your name before starting.");
     } else if (!isAlphabets.test(nameInput)) {
-        alert("<b>Your name can contain only alphabets,space and (.), Please enter a valid name</b>");
+        alert("Your name can contain only alphabets,space and (.), Please enter a valid name");
     } else {
 
         /*Display the game section when user enters the name*/
