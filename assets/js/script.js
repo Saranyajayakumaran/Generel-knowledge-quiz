@@ -234,15 +234,19 @@ function scoreSection() {
 function continueWithUsername() {
     console.log('continueWithUsername');  //to check weather the code enters the function
     const nameInput = document.getElementById("name").value.trim();
+
+    const isAlphabets = /^[a-zA-Z\s.]*$/;//The name can have letters and spaces and .period
     /*Get user input*/
     if (nameInput === "") {
         alert("Please enter your name before starting.");
+    } else if (!isAlphabets.test(nameInput)) {
+        alert("<b>Your name can contain only alphabets,space and (.), Please enter a valid name</b>");
     } else {
 
         /*Display the game section when user enters the name*/
         gameSection();
 
-        randomNumbers = getRandomUniqueNumbers(10, 0, (quizData.length - 1));
+        randomNumbers = getRandomUniqueNumbers(numOfQuestions, 0, (quizData.length - 1));
 
         console.log("Generated unique random numbers:", randomNumbers);//To check the generaed unique numbers in the console
 
@@ -281,7 +285,7 @@ function getRandomUniqueNumbers(amount, firstNum, maxNum) {
 function getIndex() {
 
     if (questionNumber < randomNumbers.length) {
-       
+
         console.log('random number', randomNumbers[questionNumber]);  // to check the random question  in console
 
         return randomNumbers[questionNumber];
@@ -292,7 +296,7 @@ function getIndex() {
     }
 }
 
-let currentQuestionIndex = 0;//declaring globally to use in othe rfunctions
+let currentQuestionIndex = 0;//declaring globally to use in other functions
 
 function showQuestion() {
 
@@ -311,8 +315,8 @@ function showQuestion() {
     // display the answer options of selected questions
     for (let index = 0; index < currentQuestion.options.length; index++) {  //Loopting through index value 
         const option = currentQuestion.options[index];
-        
-        const optionButton = document.createElement('button');  
+
+        const optionButton = document.createElement('button');
         optionButton.textContent = option;
         optionButton.classList.add('btn');
         optionButton.addEventListener('click', () => selectAnswer(option));
@@ -353,7 +357,7 @@ function selectAnswer(selectedOption) {
 
     for (let i = 0; i < optionButtons.length; i++) {
         const button = optionButtons[i];
-        
+
         if (button.textContent === currentQuestion.correctAnswer) {
             button.classList.add("correct");
         } else if (button.textContent === selectedOption) {
@@ -444,7 +448,7 @@ function startTimer() {
         stopTimer();
     }
 
-    globalCountDownTimer_Id = setInterval(() => {
+    globalCountDownTimer_Id = setInterval(() => {    // which returns an id and store in the variable
         timeLeftElement.innerHTML = `Time left: ${remainingTime}`;
 
         if (remainingTime <= 0) {
@@ -462,7 +466,7 @@ function startTimer() {
         }
 
         remainingTime--;
-    }, 1000); // Update every second
+    }, 1000); // Update the time every 1 second
 }
 function stopTimer() {
     /* stop interval timer using timerId */
