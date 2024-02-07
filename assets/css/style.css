@@ -11,6 +11,7 @@ body {
     background: #FFBA00;
     width: 105%;
     height: 110vh;
+    background:url("assets\images\BACKGROUND.webp");
     background-size: cover;
     background-position: cover;
     background-repeat: no-repeat;
@@ -415,7 +416,7 @@ h2 {
 
 @media screen and (min-width: 1504px) {
     .heading {
-        margin-left:850px;
+        margin-left:650px;
     }
     .username{
         margin:10px;
@@ -425,18 +426,18 @@ h2 {
 
     }
     .start_btn button {
-        margin-left: 970px;
+        margin-left:790px;
         text-align: center;
     }
     .game-info {
-        margin-left: 780px;
+        margin-left:580px;
     }
 
     .game-area {
         align-content: center;
         padding-left: 50px;
         margin-top:180px;
-        margin-left:700px;
+        margin-left:550px;
     }
     #question h2 {
         padding-left:0px;
@@ -448,11 +449,11 @@ h2 {
         margin-left:2px;
     }
     #score {
-        margin-left: 800px;
+        margin-left: 600px;
         margin-bottom: 60px;
     }
 
     #restart {
-        margin-left: 930px;
+        margin-left: 730px;
     }
 }

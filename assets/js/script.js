@@ -282,7 +282,7 @@ function getIndex() {
 
     if (questionNumber < randomNumbers.length) {
        
-        console.log('random number', randomNumbers[questionNumber]);  // to check the random question nuumber
+        console.log('random number', randomNumbers[questionNumber]);  // to check the random question  in console
 
         return randomNumbers[questionNumber];
     }
@@ -309,7 +309,7 @@ function showQuestion() {
     optionsElement.innerHTML = ''; //clear  the text already in option buttons
 
     // display the answer options of selected questions
-    for (let index = 0; index < currentQuestion.options.length; index++) {
+    for (let index = 0; index < currentQuestion.options.length; index++) {  //Loopting through index value 
         const option = currentQuestion.options[index];
         
         const optionButton = document.createElement('button');  
@@ -402,7 +402,7 @@ function exitQuiz() {
     if (confirmExit) {
 
         alert("Quiz exited. Thank you!");
-        homePage();
+        resetQuiz();
 
     }
 }
