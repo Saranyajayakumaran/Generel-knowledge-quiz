@@ -11,122 +11,122 @@ const quizData = [
         question: "How many heart does an Octopus have",
         options: ["3", "4", "2", "1"],
         correctAnswer: "3"
-        
+
 
     },
     {
         question: "Where is the strongest human muscle located?",
         options: ["Tigh", "Foot", "Elbow", "Jaw"],
         correctAnswer: "Jaw"
-     
+
 
     },
     {
         question: "Where is Disney's European theme park located?",
         options: ["New york", "Paris", "Mexico", "Frankfurt"],
         correctAnswer: "Paris"
-       
+
     },
     {
         question: "Which city is known as 'The Eternal City'",
         options: ["Venice", "Turin", "Rome", "Pisa"],
         correctAnswer: "Rome"
-        
+
 
     },
     {
         question: "How many ring have Olympic Flag?",
         options: ["Two", "Five", "six", "Nine"],
         correctAnswer: "Five"
-      
+
     },
     {
         question: "In wich country people drink more Coffee?",
         options: ["Ireland", "Germany", "Singapore", "Finland"],
         correctAnswer: "Finland"
-     
+
 
     },
     {
         question: "What is the currency of Europe?",
         options: ["Dollar", "Rupee", "Euro", "Dhiram"],
         correctAnswer: "Euro"
-       
+
 
     },
     {
         question: "Which planet is known as the “Blue Planet”?",
         options: ["Earth", "Uranus", "Jupiter", "Saturn"],
         correctAnswer: "Earth"
-      
+
     },
     {
         question: "What is the world's largest ocean?",
         options: ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Southern Ocean"],
         correctAnswer: "Pacific Ocean"
-     
+
     },
     {
         question: "Who was the first person to step foot on the moon in 1969?",
         options: ["Neil Armstrong", "Buzz Aldrin", "Michael Collins", "Yuri Gagarin"],
         correctAnswer: "Neil Armstrong"
-       
+
 
     },
     {
         question: "Who painted the Mona Lisa?",
         options: ["Vincent van Gogh", "Leonardo da Vinci", " Pablo Picasso", "Claude Monet"],
         correctAnswer: "Leonardo da Vinci"
-       
+
     },
     {
         question: 'What year did the United States gain independence?',
         options: ["1776", "1676", "1576", "1476"],
         correctAnswer: "1776"
-        
+
 
     },
     {
         question: "Who is known as the “Father of Modern Physics”?",
         options: ["Michael Karin", "Albert Einstein", "Eric S. Lander", "Guido Kroemer"],
         correctAnswer: "Albert Einstein"
-      
+
     },
     {
         question: "Who was the first woman to win a Nobel prize(in 1903) ?",
         options: ["Jane Addams", "Marie Curie", "Betty Williams", "Emily Greene Blach"],
         correctAnswer: "Marie Curie"
-       
+
     },
     {
         question: "Which tree is used to make paper from these 4?",
         options: ["Peepal", "Rosewood", "Ashoka", "Bamboo"],
         correctAnswer: "Bamboo"
-       
+
     },
     {
         question: "APJ Abdul Kalam played a crucial role in which space mission?",
         options: ["Chandrayaan-1", "Mangalyan", "GSLV Mk III", "INSAT-3DR"],
         correctAnswer: "Mangalyan"
-       
+
     },
     {
         question: "who is the richest man in the world 2023?",
         options: ["Elon Musk", "Bernard Arnault", "Jeff Bezos", "Bill Gates"],
         correctAnswer: "Elon Musk"
-       
+
     },
     {
         question: "What country has the most islands in the world?",
         options: ["Norway", "Indonesia", "Sweden", "Australia"],
         correctAnswer: "Sweden"
-       
+
     },
     {
         question: "What is the most consumed alcoholic drink in the world?",
         options: ["Beer", "Wine", "Whisky", "Brandy"],
         correctAnswer: "Beer"
-       
+
     }
 
 
@@ -166,15 +166,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 let userName = "";
 let score = 0;
-const selectedQuestions = [];
+const selectedQuestions = [];//Randomly selecting questions are stored in an array
 let questionNumber = 0;
 let time;
 var timeLeft;
-let seconds = 15;
+let seconds = 15;//Intial value for seconds is set to 15
 let answer = [];
-let optionsElement;
+let optionsElement;//option buttons
 var randomNumbers;
-const numOfQuestions = 10;
+const numOfQuestions = 10;//Number of questions to display in the quiz
 
 function homePage() {
     /*show only heading and start button in home page*/
@@ -217,6 +217,7 @@ function gameSection() {
 }
 
 function scoreSection() {
+    //Dsplay only score area
 
     document.querySelector(".heading").style.display = "none";
     document.querySelector(".start_btn").style.display = "none";
@@ -231,7 +232,7 @@ function scoreSection() {
 
 /*Get user name from the user before starting the quiz*/
 function continueWithUsername() {
-    console.log('continueWithUsername');  // You can replace this with your desired action for quiz completion
+    console.log('continueWithUsername');  //to check weather the code enters the function
     const nameInput = document.getElementById("name").value.trim();
     /*Get user input*/
     if (nameInput === "") {
@@ -242,7 +243,8 @@ function continueWithUsername() {
         gameSection();
 
         randomNumbers = getRandomUniqueNumbers(10, 0, (quizData.length - 1));
-        //console.log("Generated unique random numbers:", randomNumbers);
+
+        console.log("Generated unique random numbers:", randomNumbers);//To check the generaed unique numbers in the console
 
         nextQuestion();
 
@@ -252,6 +254,7 @@ function continueWithUsername() {
 }
 
 /*Generating random number*/
+
 function getRandomUniqueNumbers(amount, firstNum, maxNum) {
     if (amount > (maxNum - firstNum + 1)) {
 
@@ -278,16 +281,18 @@ function getRandomUniqueNumbers(amount, firstNum, maxNum) {
 function getIndex() {
 
     if (questionNumber < randomNumbers.length) {
-        console.log('random number', randomNumbers[questionNumber]);  // You can replace this with your desired action for quiz completion
+       
+        console.log('random number', randomNumbers[questionNumber]);  // to check the random question nuumber
 
         return randomNumbers[questionNumber];
     }
     else {
-        console.error("Error: question number exceeded maximum number of range.");
+        console.error("Error: question number exceeded maximum number of range.");// to check in the console
         return [];
     }
 }
-let currentQuestionIndex = 0;
+
+let currentQuestionIndex = 0;//declaring globally to use in othe rfunctions
 
 function showQuestion() {
 
@@ -300,30 +305,31 @@ function showQuestion() {
     const currentQuestion = quizData[currentQuestionIndex];
 
 
-    questionElement.innerHTML = (questionNumber + 1) + "." + currentQuestion.question;
-    optionsElement.innerHTML = '';//reset the text tin option buttons
+    questionElement.innerHTML = (questionNumber + 1) + "." + currentQuestion.question;//Display the questions with question number
+    optionsElement.innerHTML = ''; //clear  the text already in option buttons
 
     // display the answer options of selected questions
-    currentQuestion.options.forEach((option, index) => {
-        const optionButton = document.createElement('button');
+    for (let index = 0; index < currentQuestion.options.length; index++) {
+        const option = currentQuestion.options[index];
+        
+        const optionButton = document.createElement('button');  
         optionButton.textContent = option;
         optionButton.classList.add('btn');
         optionButton.addEventListener('click', () => selectAnswer(option));
         optionsElement.appendChild(optionButton);
-    });
-
+    }
 }
 
 function nextQuestion() {
 
     if (questionNumber < numOfQuestions) {
 
-        //optionButtonsDisable();
         showQuestion();
         startTimer();
 
         questionNumber++;//increment the question number each time clicks the next button
     }
+
     else {
 
 
@@ -345,13 +351,15 @@ function selectAnswer(selectedOption) {
 
     optionButtonsDisable();// call the function to disable the option buttons 
 
-    optionButtons.forEach(button => {
+    for (let i = 0; i < optionButtons.length; i++) {
+        const button = optionButtons[i];
+        
         if (button.textContent === currentQuestion.correctAnswer) {
             button.classList.add("correct");
         } else if (button.textContent === selectedOption) {
             button.classList.add("incorrect");
         }
-    });
+    }
 
     if (selectedOption === currentQuestion.correctAnswer) {
         score++;
@@ -374,7 +382,7 @@ function displayScore() {
     let scoreValue = document.getElementById("score");
     let nameInput = document.getElementById("name").value.trim();
     scoreValue.innerHTML = '';
-    
+
     if (score < 5) {
 
         scoreValue.textContent = 'Well done! ' + nameInput + '  Your Score:' + score + ' out of ' + randomNumbers.length + '  You can improve next time';
