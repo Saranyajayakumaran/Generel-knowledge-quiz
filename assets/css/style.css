@@ -162,10 +162,10 @@ h2 {
 
 }
 
-.btn:hover{
-    background-color:rgb(201 192 245 / 50%);
+/*.btn:hover{
+    background-color:rgba(255, 255, 255, 0.5);
     color:#ffffff;
-}
+}*/
 .correct {
     background: #9aeabc;
 }
@@ -354,7 +354,8 @@ h2 {
     }
 
     .next {
-        margin: 15px;
+        margin:auto;
+        margin-top:15px;
     
 
     }
@@ -414,39 +415,44 @@ h2 {
 
 @media screen and (min-width: 1504px) {
     .heading {
-        margin-left:550px;
+        margin-left:850px;
     }
-    .username,
-    input {
-        margin:5px;
+    .username{
+        margin:10px;
+        margin-left:100px;
         text-align: center;
+        align-items:center;
 
     }
     .start_btn button {
-        margin-left: 680px;
+        margin-left: 970px;
         text-align: center;
     }
     .game-info {
-        margin-left: 480px;
+        margin-left: 780px;
     }
 
     .game-area {
         align-content: center;
         padding-left: 50px;
         margin-top:180px;
-        margin-left:460px;
+        margin-left:700px;
     }
     #question h2 {
-        padding-left: 10px;
+        padding-left:0px;
         font-size: 30px;
 
     }
+    .next {
+        margin: 20px;
+        margin-left:2px;
+    }
     #score {
-        margin-left: 600px;
+        margin-left: 800px;
         margin-bottom: 60px;
     }
 
     #restart {
-        margin-left: 730px;
+        margin-left: 930px;
     }
 }

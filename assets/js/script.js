@@ -1,105 +1,135 @@
-
+used: false
 /*Get the questions as arrays and objects inside the array*/
 const quizData = [
     {
         question: "Which is the largest Spanish-speaking city in the world?",
         options: ["New york", "Paris", "Mexico", "Frankfurt"],
-        correctAnswer: "Mexico",
-        used: false
+        correctAnswer: "Mexico"
 
     },
     {
         question: "How many heart does an Octopus have",
         options: ["3", "4", "2", "1"],
-        correctAnswer: "3",
-        used: false
+        correctAnswer: "3"
+        
 
     },
     {
         question: "Where is the strongest human muscle located?",
         options: ["Tigh", "Foot", "Elbow", "Jaw"],
-        correctAnswer: "Jaw",
-        used: false
+        correctAnswer: "Jaw"
+     
 
     },
     {
         question: "Where is Disney's European theme park located?",
         options: ["New york", "Paris", "Mexico", "Frankfurt"],
-        correctAnswer: "Paris",
-        used: false
+        correctAnswer: "Paris"
+       
     },
     {
         question: "Which city is known as 'The Eternal City'",
         options: ["Venice", "Turin", "Rome", "Pisa"],
-        correctAnswer: "Rome",
-        used: false
+        correctAnswer: "Rome"
+        
 
     },
     {
-        question: "Which Planet is closest to the Sun?",
-        options: ["Mercury", "Mars", "Earth", "Neptune"],
-        correctAnswer: "Mercury",
-        used: false
-
+        question: "How many ring have Olympic Flag?",
+        options: ["Two", "Five", "six", "Nine"],
+        correctAnswer: "Five"
+      
     },
     {
         question: "In wich country people drink more Coffee?",
         options: ["Ireland", "Germany", "Singapore", "Finland"],
-        correctAnswer: "Finland",
-        used: false
+        correctAnswer: "Finland"
+     
 
     },
     {
         question: "What is the currency of Europe?",
         options: ["Dollar", "Rupee", "Euro", "Dhiram"],
-        correctAnswer: "Euro",
-        used: false
+        correctAnswer: "Euro"
+       
 
     },
     {
         question: "Which planet is known as the “Blue Planet”?",
         options: ["Earth", "Uranus", "Jupiter", "Saturn"],
-        correctAnswer: "Earth",
-        used: false
+        correctAnswer: "Earth"
+      
     },
     {
         question: "What is the world's largest ocean?",
         options: ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Southern Ocean"],
-        correctAnswer: "Pacific Ocean",
-        used: false
+        correctAnswer: "Pacific Ocean"
+     
     },
     {
         question: "Who was the first person to step foot on the moon in 1969?",
         options: ["Neil Armstrong", "Buzz Aldrin", "Michael Collins", "Yuri Gagarin"],
-        correctAnswer: "Neil Armstrong",
-        used: false
+        correctAnswer: "Neil Armstrong"
+       
 
     },
     {
         question: "Who painted the Mona Lisa?",
         options: ["Vincent van Gogh", "Leonardo da Vinci", " Pablo Picasso", "Claude Monet"],
-        correctAnswer: "Leonardo da Vinci",
-        used: false
+        correctAnswer: "Leonardo da Vinci"
+       
     },
     {
         question: 'What year did the United States gain independence?',
         options: ["1776", "1676", "1576", "1476"],
-        correctAnswer: "1776",
-        used: false
+        correctAnswer: "1776"
+        
 
     },
     {
         question: "Who is known as the “Father of Modern Physics”?",
-        options: ["Michael Karin", " Albert Einstein", "Eric S. Lander", "Guido Kroemer"],
-        correctAnswer: "Albert Einstein",
-        used: false
+        options: ["Michael Karin", "Albert Einstein", "Eric S. Lander", "Guido Kroemer"],
+        correctAnswer: "Albert Einstein"
+      
     },
     {
-        question: "What is the currency of Japan?",
-        options: ["Rupees", "Euro", "yen", "frank"],
-        correctAnswer: "yen",
-        used: false
+        question: "Who was the first woman to win a Nobel prize(in 1903) ?",
+        options: ["Jane Addams", "Marie Curie", "Betty Williams", "Emily Greene Blach"],
+        correctAnswer: "Marie Curie"
+       
+    },
+    {
+        question: "Which tree is used to make paper from these 4?",
+        options: ["Peepal", "Rosewood", "Ashoka", "Bamboo"],
+        correctAnswer: "Bamboo"
+       
+    },
+    {
+        question: "APJ Abdul Kalam played a crucial role in which space mission?",
+        options: ["Chandrayaan-1", "Mangalyan", "GSLV Mk III", "INSAT-3DR"],
+        correctAnswer: "Mangalyan"
+       
+    },
+    {
+        question: "who is the richest man in the world 2023?",
+        options: ["Elon Musk", "Bernard Arnault", "Jeff Bezos", "Bill Gates"],
+        correctAnswer: "Elon Musk"
+       
+    },
+    {
+        question: "What country has the most islands in the world?",
+        options: ["Norway", "Indonesia", "Sweden", "Australia"],
+        correctAnswer: "Sweden"
+       
+    },
+    {
+        question: "What is the most consumed alcoholic drink in the world?",
+        options: ["Beer", "Wine", "Whisky", "Brandy"],
+        correctAnswer: "Beer"
+       
     }
+
+
 ]
 
 document.addEventListener('DOMContentLoaded', function () {
