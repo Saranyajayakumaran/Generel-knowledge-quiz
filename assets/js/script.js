@@ -260,7 +260,11 @@ function nextQuestion() {
         displayScore();
     }
 }
-/*Code to select option button from the user and check it is correct or not*/
+
+/**
+ * Code to select option button from the user and check it is correct or not-m ""
+ * @param {string} selectedOption */
+ 
 function selectAnswer(selectedOption) {
     const currentQuestion = quizData[currentQuestionIndex];
     const optionButtons = document.querySelectorAll(".btn");
