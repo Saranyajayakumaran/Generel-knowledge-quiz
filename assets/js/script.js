@@ -102,24 +102,17 @@ const quizData = [
         options: ["Beer", "Wine", "Whisky", "Brandy"],
         correctAnswer: "Beer"
     }
-]
+];
 
 document.addEventListener('DOMContentLoaded', function () {
     /*document.body.style.backgroundImage="url('assets\images\6114100.jpg')";*/
 
-    const nameInput = document.getElementById("name");
+    
     let startBtn = document.querySelector(".start_btn button");
     let exitBtn = document.getElementsByClassName(".exit");
     let nextBtn = document.getElementsByClassName(".next");
-    let gameArea = document.querySelector(".game-area");
-    let questionElement = document.getElementById("question");
-    let timeLeftElement = document.querySelector(".time-left");
     let optionsContainer = document.getElementById("options");
     let continueBtn = document.getElementsByClassName(".continue");
-    let scoreValue = document.getElementById("score");
-    const generalMessage=document.getElementById("message");
-    let userScore=document.getElementById("score-value");
-    let feedback=document.getElementById("feedback");
     let restartBtn = document.getElementById("restart");
     homePage();
     /*Event listener for Buttons */
@@ -129,7 +122,6 @@ document.addEventListener('DOMContentLoaded', function () {
     exitBtn.addEventListener("click", exitQuiz);
     optionsContainer.addEventListener("click", selectAnswer);
     nextBtn.addEventListener("click", nextQuestion);
-    optBtn.addEventListener("click", showQuestion);
     restartBtn.addEventListener("click", resetQuiz);//restart quiz
 });
 
@@ -138,7 +130,6 @@ let score = 0;
 const selectedQuestions = [];//Randomly selecting questions are stored in an array
 let questionNumber = 0;
 let time;
-let timeLeft;
 let seconds = 15;//Intial value for seconds is set to 15
 let answer = [];
 let optionsElement;//option buttons
@@ -173,7 +164,7 @@ function gameSection() {
     document.querySelector(".username").style.display = "none";
     document.querySelector(".game-area").style.display = "block";
     document.getElementById("score").style.display = "none";
-    document.getElementById("restart").style.display = "none"
+    document.getElementById("restart").style.display = "none";
 }
 //Dsplay only score area
 function scoreSection() {
@@ -183,7 +174,7 @@ function scoreSection() {
     document.querySelector(".username").style.display = "none";
     document.querySelector(".game-area").style.display = "none";
     document.getElementById("score").style.display = "block";
-    document.getElementById("restart").style.display = "block"
+    document.getElementById("restart").style.display = "block";
 }
 /*Get user name from the user before starting the quiz*/
 function continueWithUsername() {
