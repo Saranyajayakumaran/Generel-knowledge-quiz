@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /*document.body.style.backgroundImage="url('assets\images\6114100.jpg')";*/
 
-    let nameInput = document.getElementById("name");
+    const nameInput = document.getElementById("name");
     let startBtn = document.querySelector(".start_btn button");
     let exitBtn = document.getElementsByClassName(".exit");
     let nextBtn = document.getElementsByClassName(".next");
@@ -146,13 +146,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let optionsContainer = document.getElementById("options");
     let continueBtn = document.getElementsByClassName(".continue");
     let scoreValue = document.getElementById("score");
-    let restartBtn = document.getElementById("restart")
-
-
-
+    const generalMessage=document.getElementById("message");
+    let userScore=document.getElementById("score-value");
+    let feedback=document.getElementById("feedback");
+    let restartBtn = document.getElementById("restart");
     homePage();
-
-
     /*Event listener for Buttons */
     /* Event listener for the Start Quiz button*/
     startBtn.addEventListener("click", startQuiz);
@@ -169,11 +167,11 @@ let score = 0;
 const selectedQuestions = [];//Randomly selecting questions are stored in an array
 let questionNumber = 0;
 let time;
-var timeLeft;
+let timeLeft;
 let seconds = 15;//Intial value for seconds is set to 15
 let answer = [];
 let optionsElement;//option buttons
-var randomNumbers;
+let randomNumbers;
 const numOfQuestions = 10;//Number of questions to display in the quiz
 
 function homePage() {
@@ -257,18 +255,24 @@ function continueWithUsername() {
     }
 }
 
-/*Generating random number*/
 
+/**
+ * Generating random numbers as array
+ * @param {number} amount 
+ * @param {number} firstNum 
+ * @param {number} maxNum 
+ * @returns random numbers as array  
+ */
 function getRandomUniqueNumbers(amount, firstNum, maxNum) {
     if (amount > (maxNum - firstNum + 1)) {
 
         return [];
     }
 
-    var randomUniqueNumber = [];
+    let randomUniqueNumber = [];
 
     while (randomUniqueNumber.length < amount) {
-        var randomNumber = Math.floor(Math.random() * (maxNum - firstNum + 1)) + firstNum;
+        let randomNumber = Math.floor(Math.random() * (maxNum - firstNum + 1)) + firstNum;
 
         // Check weather the number already in random number array
         if (!randomUniqueNumber.includes(randomNumber)) {
@@ -383,16 +387,24 @@ function displayScore() {
 
     scoreSection();
     console.log("score increased:" + score);// to check the score in console
-    let scoreValue = document.getElementById("score");
-    let nameInput = document.getElementById("name").value.trim();
-    scoreValue.innerHTML = '';
+    /*let scoreValue = document.getElementById("score");*/
+    const nameInput = document.getElementById("name").value.trim();
+    const generalMessage=document.getElementById("message");
+    let userScore=document.getElementById("score-value");
+    let feedback=document.getElementById("feedback");
+    /*scoreValue.innerHTML = '';*/
+    generalMessage.innerHTML='';
+    userScore.innerHTML='';
+    feedback.innerHTML='';
+    generalMessage.textContent=nameInput;
+    userScore.textContent=score + " out of " + numOfQuestions ;
 
     if (score < 5) {
 
-        scoreValue.textContent = 'Well done! ' + nameInput + '  Your Score:' + score + ' out of ' + randomNumbers.length + '  You can improve next time';
-
+        feedback.textContent="You can improve Next time";
     } else {
-        scoreValue.textContent = 'Well done! ' + nameInput + '  Your Score: ' + score + ' out of ' + randomNumbers.length + ' Great Job';
+       
+        feedback.textContent="Great job! Keep It Up";
     }
 
 }
