@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* Ensure the background covers the entire viewport height */
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -16,9 +17,6 @@ body {
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-
-    /* Ensure the background covers the entire viewport height */
-
 }
 
 .heading {
@@ -35,7 +33,6 @@ body {
     width: fit-content;
     margin: 25px;
     margin-left: 15px;
-
 }
 
 /*change the logo size to fit with the heading*/
@@ -49,7 +46,7 @@ body {
     padding: 20px;
     line-height: 1.6;
     width: fit-content;
-    height: 690px;
+    height: 780px;
     background: rgba(0, 0, 0, 0.7);
     color: white;
     margin: 25px;
@@ -74,10 +71,15 @@ body {
 .username,
 input {
     font-size: 20px;
-    text-align: center;
+    text-align: left;
     color: rgba(0, 0, 0);
     margin: 10px;
-    margin-left: 1px;
+    margin-left: 5px;
+    padding-bottom: 6px;
+}
+
+.username {
+    text-align: center;
 }
 
 .game-area {
@@ -87,7 +89,7 @@ input {
     color: #ffffff;
     margin: 20px;
     padding-bottom: 10px;
-    margin-top: 100px;
+    margin-top: 90px;
     margin-left: 15px;
 }
 
@@ -99,10 +101,10 @@ input {
     font-size: 13px;
 }
 
-
 #questions,
 h2 {
     padding: 10px;
+    padding-top: 40px;
     text-align: left;
 }
 
@@ -122,7 +124,6 @@ h2 {
 
 }
 
-
 .exit,
 .continue {
     width: fit-content;
@@ -136,7 +137,6 @@ h2 {
 }
 
 /* Add some spacing between the buttons */
-
 .start_btn button {
     margin-left: 70px;
     border-radius: 5px;
@@ -163,10 +163,6 @@ h2 {
 
 }
 
-/*.btn:hover{
-    background-color:rgba(255, 255, 255, 0.5);
-    color:#ffffff;
-}*/
 .correct {
     background: #9aeabc;
     /*correct answers will turn green*/
@@ -199,7 +195,6 @@ h2 {
     width: 250px;
     font-size: 20px;
     background-color: rgba(0, 0, 0, 0.7);
-    ;
     color: #ffffff;
     margin-top: 200px;
     margin-left: 15px;
@@ -209,15 +204,15 @@ h2 {
     border-radius: 10px;
     /* Rounded corners */
     text-align: center;
-
     font-size: 20px;
-
     display: block;
 
 }
-#message,#score-value,#feedback{
-    color:rgb(195, 253, 86);
-    font-weight:bold;
+
+#message,
+#score-value,
+#feedback {
+    color: rgb(200, 248, 110);
 }
 
 #restart {
@@ -242,7 +237,6 @@ h2 {
     color: #000000;
 }
 
-
 /* Media query:tablets and larger(768px and up*/
 @media screen and (min-width:768px) {
 
@@ -252,9 +246,7 @@ h2 {
     }
 
     /*Heading margin changed according to screen size*/
-
     .heading {
-
         width: 400px;
         margin: auto;
         margin-top: 100px;
@@ -308,8 +300,6 @@ h2 {
         font-size: 25px;
     }
 
-
-
     .game-area {
         width: 600px;
         padding: 30px;
@@ -328,12 +318,13 @@ h2 {
     }
 
     #score {
-
         width: 400px;
         height: 100px;
         margin-left: 200px;
     }
+
 }
+
 
 /*media query ipad pro */
 
@@ -382,8 +373,7 @@ h2 {
         margin-left: 310px;
     }
 
-
-
+    
 }
 
 /*media query desktop*/
@@ -404,7 +394,6 @@ h2 {
         font-size: 20px;
     }
 
-
     .options {
         padding: 10px;
     }
@@ -418,7 +407,6 @@ h2 {
         padding-left: 50px;
         margin-left: 300px;
         margin-top: 100px;
-
     }
 
     #score {
@@ -434,7 +422,6 @@ h2 {
 /*media query desktop*/
 
 @media screen and (min-width: 1504px) {
-
     body {
         height: 110vh;
         /*increase height for fit content*/
@@ -443,13 +430,13 @@ h2 {
     .heading {
         margin-left: 550px;
     }
-   /*Make the input section to display center of the page*/
+
+    /*Make the input section to display center of the page*/
     .username {
         margin: 10px;
         margin-left: 20px;
         text-align: center;
         align-items: center;
-
     }
 
     .start_btn button {
@@ -471,7 +458,6 @@ h2 {
     #question h2 {
         padding-left: 0px;
         font-size: 30px;
-
     }
 
     .next {
@@ -482,6 +468,12 @@ h2 {
     #score {
         margin-left: 600px;
         margin-bottom: 60px;
+    }
+    #message,
+    #score-value,
+    #feedback {
+        color: rgb(200, 248, 110);
+        font-weight: bold;
     }
 
     #restart {
