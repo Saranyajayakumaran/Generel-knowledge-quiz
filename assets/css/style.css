@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /* Ensure the background covers the entire viewport height */
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -10,12 +11,14 @@ body {
     padding: 0;
     background: linear-gradient(150deg, #d6c6fa, #380374);
     width: 100%;
-    height: 100vh;
-    background-size: cover;
+    height: 110vh;
+    background-size: contain;
     background-repeat: no-repeat;
+    background-position: fixed;
     display: flex;
     flex-direction: column;
 }
+
 .heading {
     background: rgba(0, 0, 0, 0.7);
     height: fit-content;
@@ -31,35 +34,36 @@ body {
     margin: 25px;
     margin-left: 15px;
 }
+
 /*change the logo size to fit with the heading*/
 .logo {
     width: 40px;
     height: 40px;
 }
+
 .game-info {
-    margin-bottom: 30px;
     padding: 20px;
-    line-height: 1.6;
-    width: fit-content;
-    height: 780px;
+    line-height: 1.5;
+    height: fit-content;
     background: rgba(0, 0, 0, 0.7);
     color: white;
     margin: 25px;
-    margin-left: 10px;
+    margin-left:20px;
     padding-right: 15px;
-    margin-bottom: 5px;
-    margin-left: 15px;
+    font-size:10px;
+}
 
-}
 .info ol {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     margin-bottom: 20px;
-    font-size: 20px;
-    margin-left: 30px;
+    font-size: 12px;
+    margin-left:8px;
 }
+
 .game-info h3 {
     font-size: 20px;
 }
+
 .username,
 input {
     font-size: 20px;
@@ -69,19 +73,21 @@ input {
     margin-left: 5px;
     padding-bottom: 6px;
 }
+
 .username {
     text-align: center;
 }
+
 .game-area {
     background: rgba(0, 0, 0, 0.7);
     width: 85%;
     font-size: 15px;
     color: #ffffff;
     margin: 20px;
+    margin-top: 70px;
     padding-bottom: 10px;
-    margin-top: 90px;
-    margin-left: 15px;
 }
+
 .time {
     padding: 20px;
     padding-left: 140px;
@@ -89,12 +95,14 @@ input {
     display: flex;
     font-size: 13px;
 }
+
 #questions,
 h2 {
     padding: 10px;
     padding-top: 40px;
     text-align: left;
 }
+
 #options {
     display: flex;
     flex-direction: column;
@@ -102,12 +110,33 @@ h2 {
     width: 100%;
 
 }
+
 /*giving all the buttons same size*/
 .start_btn button {
     padding: 10px 20px;
     border-radius: 5px;
     margin-bottom: 20px;
 
+}
+
+/* Add some spacing between the buttons */
+.start_btn button {
+    margin-left: 70px;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0);
+    font-size: 20px;
+    margin: 100px;
+}
+
+.buttons {
+    display:block;
+    justify-content: space-between;
+    padding: 8px;
+    margin-left:40px;
+}
+.exit{
+    margin-left:20px;
 }
 .exit,
 .continue {
@@ -120,21 +149,6 @@ h2 {
     border-radius: 5px;
     cursor: pointer;
 }
-/* Add some spacing between the buttons */
-.start_btn button {
-    margin-left: 70px;
-    border-radius: 5px;
-    color: #ffffff;
-    background-color: rgba(0, 0, 0);
-    font-size: 20px;
-    margin: 100px;
-}
-.buttons {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    padding: 8px;
-}
 .btn {
     width: 200px;
     height: 40px;
@@ -144,6 +158,7 @@ h2 {
     border-radius: 5px;
 
 }
+
 .correct {
     background: #9aeabc;
     /*correct answers will turn green*/
@@ -153,6 +168,7 @@ h2 {
     background: #ff9393;
     /* incorrect answer will turn red*/
 }
+
 .next button {
     width: 75px;
     height: 40px;
@@ -164,6 +180,7 @@ h2 {
 
 
 }
+
 #question h2 {
     padding-left: 20px;
 
@@ -278,6 +295,20 @@ h2 {
         padding-left: 380px;
         font-size: 25px;
     }
+    .info ol{
+        font-size:20px;
+        margin-left:20px;
+    }
+    .buttons{
+        display:flex;
+        justify-content: space-between;
+    }
+    .continue{
+        margin-left:160px;
+    }
+    .exit{
+        margin-left:180px;
+    }
 
     .game-area {
         width: 600px;
@@ -301,8 +332,12 @@ h2 {
         height: 100px;
         margin-left: 200px;
     }
+    #restart{
+        margin-left:340px;
+    }
 
 }
+
 /*media query ipad pro */
 
 @media screen and (min-width: 1024px) {
@@ -331,20 +366,26 @@ h2 {
     #options .btn {
         margin: 10px
     }
+
     .start_btn button {
         margin-left: 440px;
         text-align: center;
 
 
     }
+
     .next {
         margin: auto;
         margin-top: 15px;
     }
+
     #score {
         margin-left: 310px;
     }
- 
+    #restart{
+        margin-left:430px;
+    }
+
 }
 
 /*media query desktop*/
@@ -400,6 +441,7 @@ h2 {
 
     .heading {
         margin-left: 550px;
+        margin-top:50px;
     }
 
     /*Make the input section to display center of the page*/
@@ -417,12 +459,12 @@ h2 {
 
     .game-info {
         margin-left: 480px;
+        height:fit-content;
     }
-
     .game-area {
         align-content: center;
         padding-left: 50px;
-        margin-top: 180px;
+        margin-top: 80px;
         margin-left: 450px;
     }
 
@@ -433,13 +475,14 @@ h2 {
 
     .next {
         margin: 20px;
-        margin-left:-10px;
+        margin-left: -10px;
     }
 
     #score {
         margin-left: 600px;
         margin-bottom: 60px;
     }
+
     #message,
     #score-value,
     #feedback {

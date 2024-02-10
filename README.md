@@ -4,7 +4,7 @@
 This quiz game is designed to challenge and expand your understanding across a wide range of topics.The main aim is to make learning fun and accessible for users of all ages and interests. 
 the user can expand your knowledge in various topics.
 
-The website is responsive for on a screens
+The website is responsive on a screens
 
 
 
@@ -123,13 +123,71 @@ The website is responsive for on a screens
  
 ### Bugs
 
-Solved Bugs
+#### Solved Bugs
 - The input section allows all the character as input. I wanted it only alphabets ,period(.) and space.
    solved the bug by checking the input  in javascript continue with username function.
 - The timer was not resetting wen clicking the next question. solved the problem using clearinterval library function.
 - The user input and score was not resetting when playing the game again . Solved the issue by resetting all the uI elements and variables in resetQuiz function.
 - Coudnt print the score area line by line and added the lines in Html itself ans solved the bug.
 
+### Validator Testing
+
+#### Fixed Bugs 
+- HTML
+    - Missed some end tag when passing through the official W3C validator
+    - Resolved it and again tested : No error found.
+- CSS
+
+    - Missed some semicolon when passing through CSS validator.
+    - Resolved it and again tested : No error found.
+
+- JavaScript
+    - Missed some semicolon and colosing brackets.
+    - Had some unused UI elements.
+    -   Resolved it and again tested : No error found.
+
+### Accessibility
+
+I confirmed that the color and fonts choosen are easy to read and accessible by running it through lighthouse in devtools.
+
+- Unfixed Bugs
+    - A waring in the Javascript is not fixed because it wll not create any problem in this project.
+    
+
+### Deployment
+
+#### Version Control
+- The game is created using VS code IDE and commited and pushed to gitub using git.
+- The commands used to push code to remote repository are:
+    - git add .
+    - git commit -m "..."
+    - git push
+    - git diff
+
+
+#### Deployment to Github Pages
+- The site was deployed to GitHub pages. The steps to deploy are as follows:
+    
+    - In the GitHub repository,navigate to the settings tab.
+    
+    - Select the Pages from Code and automation menu.
+    
+    - Then give the default branch to main.
+    
+    - The page provides the link to complete website.
+
+#### Clone the Repository Code Locally
+
+- The steps to deploy are as follows:
+
+    - In the GitHub repository click code tab and copy the URL of repository.
+    - Open command prompt in the local computer and type git clone and paste the URL of GitHub repository. "git clone https://github.com/Saranyajayakumaran/Happy-Yoga.git"
+    - The repository will be deployed in loco machine.
+    - We can check the directory using "dir" command in command prompt.
+
+### Credits
+
+- Content
 
 
 
