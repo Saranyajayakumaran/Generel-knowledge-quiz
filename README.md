@@ -32,6 +32,8 @@ The website is responsive on a screens
     - Start button
         - When user clicks the start button it navigates to the instruction section of the page.
 
+![Alt text] https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/screenshot%20page%201.png
+
 - Game information Section
     - This section contains the title of the quiz , user name input, game instruction, continue button and a exit button
     - User Name input
@@ -43,6 +45,8 @@ The website is responsive on a screens
     -Exit button
         - Exit button will navigate to home page and refresh the name input if the user given the name already.
 
+![Alt text] https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/screenshot%20page2.png
+
 - Game section
     - The game section contains the questions with options,next button and also the time line for each question.
     - Time line
@@ -53,15 +57,21 @@ The website is responsive on a screens
     - Next button
         - It provides a way to to go to next question when user selects the answer before 15 seconds.
 
+![Alt text] https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/screenshot%20page%203.png
+![Alt text] https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/screenshot%20page%204.png
+![Alt text] https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/screenshot%20page%205.png
+
 - Score section
     - The score section contains the actual score of the user and give a feed back based on the score
     - Resart Game button
         - This button helps the user to play the game again if they are interested.
+![Alt text] https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/scrennshot%20page%206.png
 
 ### Features left to Implement
 
  - Add more field for quiz that user can choose like sport,science etc
  - When user select the option timer also can be stopped.
+ - Can create a previous question buton to see previous question.
 
 
 ### How the Game works 
@@ -84,7 +94,13 @@ The website is responsive on a screens
 
 ### Design
 #### Flow chart
+![Alt text] https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/flowchart%20how%20game%20works.png
 #### Wireframes
+
+![Alt text] https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/Wireframe%201%20and%202.png
+
+
+![Alt text] https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/wireframe%202%20and%203.png
 
 
 
