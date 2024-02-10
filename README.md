@@ -117,7 +117,7 @@ The website is responsive on a screens
 #### Functional Testing
 
 | Action  | Expected Result | Pass/Fail|
-
+|---------|-----------------|----------|
 |Enter Home Page URL| Open the home Page| Pass|
 |Click the Start Quiz Button| Display Game info section| Pass|
 |Leave the input name blank and click continue|Alert(Enter your name before starting the game)|Pass|
