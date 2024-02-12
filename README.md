@@ -65,12 +65,13 @@ The website is responsive on all screens [General knowledgeQuiz](https://github.
 - The score section contains the actual score of the user and give a feedback based on the score
     - Resart Game button
         - This button helps the user to play the game again if they are interested.
+
 ![Score section screenshot](https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/scrennshot%20page%206.png)
 
 #### 404-Error page
 - The error page will display when user types something irrelevant to website.The user is given a choice of go to home page.
 
-![Error Page]()
+![Error Page](https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/error%20page%20.png)
 
 ### Future Implementations
 - In future implementation i would like to implement
