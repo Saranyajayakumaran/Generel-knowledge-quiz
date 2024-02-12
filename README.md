@@ -2,7 +2,7 @@
 
 Join us for a fun and educational adventure! Our quiz game is designed to challenge your knowledge across various topics, making learning enjoyable and accessible for all ages. Expand your understanding while having a great time!
 
-The website is responsive on all screens
+The website is responsive on all screens [General knowledgeQuiz](https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/deployments)
 
 ![Game responsive screen](https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/RESPONSIVE.png)
 
@@ -97,11 +97,11 @@ The website is responsive on all screens
 ### Design
 #### Flow chart
 ##### How the Game works
-![Flow char how game works](https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/flowchart%20how%20game%20works.png)
+![Flowt char how game works](https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/flow%20chart%20how%20to%20play.png)
 
 #### Wireframes
 
-[Wireframe Desktop and mobile]()
+![Wireframe Desktop and mobile](https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/Wireframe%20mobile%20and%20desktop.png)
 
 
 ### Testing
@@ -143,11 +143,11 @@ The website is responsive on all screens
 
 |Bugs found|EXPECTATION|How I solved it|
 |----------|-----------|---------------|
-|The input section allows all the character as input|It should allow only alphabets,space and period(.)|I declared a variable isalphabet with all the characters i need and compared with he user input with if else condition|
+|The input section allows all the character as input|It should allow only alphabets,space and period(.)|I declared a variable isalphabet with all the characters i need and compared with the user input with if else condition|
 |The timer was not resetting when clicking the next question button|Should restart from 15 sec|Solved the problem by using Clear interval function. |
-|The user input and score was not resetting when playing the game again|The name input and score should be reset with blank string|Cleared all the inpus fromuser in resetquiz function|
-|Coudn't print the score area line by line|Display the score and feedback in next lines|Solved by added the lines in Html andprint the name and score in javascript|
-|First question was not displayed when we click the continue button|Questions should be displayed in game section|Solved the bug by deleting the for loop which i used to get questions 10 times and call the nextquestion function each time when we click ontinue button|
+|The user input and score was not resetting when playing the game again|The name input and score should be reset with blank string|Cleared all the inputs from user in reset quiz function|
+|Coudn't print the score area line by line|Display the score and feedback in next lines|Solved by added the lines in Html and print the name and score in javascript|
+|First question was not displayed when we click the continue button|Questions should be displayed in game section|Solved the bug by deleting the for loop which i used to get questions 10 times and call the next question function each time when we click continue button|
 
 ### Validator Testing
 
@@ -185,10 +185,10 @@ I confirmed that the color and fonts choosen are easy to read and accessible by 
 #### Version Control
 - The game is created using VS code IDE and commited and pushed to gitub using git.
 - The commands used to push code to remote repository are:
-    - git add .
-    - git commit -m "..."
-    - git push
-    - git diff
+    - git add .     -using to add the changes
+    - git commit -m "..."   - using to commit the changes to github
+    - git push  - using to push the commited chnages to github
+    - git diff  - used to see the changes we made before commiting.
 
 
 #### GitHub Deployment 
@@ -214,7 +214,7 @@ I confirmed that the color and fonts choosen are easy to read and accessible by 
 
 - I would thank many sources and people who spported to complete my project.
     - Thanking my mentor Dick vlaanderen who guided me and his ideas and corrections was very helpful.
-    - i would like to thank some youtube channels helped t learn the concepts and ideas.
+    - I would like to thank some youtube channels helped t learn the concepts and ideas.
     - W3schools and stackoverflow plays a major role to learn the concepts.
     - The idea of webpage design and some coding has been referred from youtube channel [GreatStack](https://www.youtube.com/watch?v=PBcqGxrr9g8)
     - Learned some concepts from the [Love-Math](https://github.com/Saranyajayakumaran/Love-Math)
