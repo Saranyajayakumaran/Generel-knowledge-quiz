@@ -101,6 +101,9 @@ h2 {
     padding-top: 40px;
     text-align: left;
 }
+#question{
+    font-size:20px;
+}
 
 #options {
     display: flex;
@@ -109,7 +112,6 @@ h2 {
     width: 100%;
 
 }
-
 /*giving all the buttons same size*/
 .start_btn button {
     padding: 10px 20px;
@@ -117,7 +119,6 @@ h2 {
     margin-bottom: 20px;
 
 }
-
 /* Add some spacing between the buttons */
 .start_btn button {
     margin-left: 70px;
@@ -179,10 +180,8 @@ h2 {
 
 
 }
-
 #question h2 {
     padding-left: 20px;
-
 }
 
 #score {
@@ -201,7 +200,6 @@ h2 {
     text-align: center;
     font-size: 20px;
     display: block;
-
 }
 
 #message,
@@ -335,13 +333,6 @@ h2 {
         margin: 80px;
         margin-top: 200px;
     }
-
-    #question h2 {
-        padding-left: 20px;
-        font-size: 30px;
-
-    }
-
     .next button {
         margin-left: 220px;
     }
@@ -354,7 +345,6 @@ h2 {
     #restart{
         margin-left:340px;
     }
-
 }
 
 /*media query ipad pro */
@@ -371,13 +361,11 @@ h2 {
         padding-left: 50px;
         margin-bottom: 20px
     }
-
     .game-info {
         margin-left: 250px;
         height: 430px;
 
     }
-
     .game-area {
         margin: 200px;
     }
@@ -389,10 +377,7 @@ h2 {
     .start_btn button {
         margin-left: 440px;
         text-align: center;
-
-
     }
-
     .next {
         margin: auto;
         margin-top: 15px;
@@ -486,12 +471,6 @@ h2 {
         margin-top: 80px;
         margin-left: 450px;
     }
-
-    #question h2 {
-        padding-left: 0px;
-        font-size: 30px;
-    }
-
     .next {
         margin: 20px;
         margin-left: -10px;
@@ -513,3 +492,29 @@ h2 {
         margin-left: 730px;
     }
 }
+
+@media screen and (min-width: 1920px){
+    .heading {
+        margin-left: 750px;
+    }.start_btn button {
+        margin-left: 900px;
+    }
+    .game-info {
+        margin-left: 680px;
+    }
+    .game-area {
+        width: 600px;
+        height:fit-content;
+        margin-left:700px;
+        margin-top:100px;
+    }
+    #score {
+        margin-left: 800px;
+    }
+    #restart {
+        margin-left: 950px;
+        font-size:20px;
+    }
+
+}
+
