@@ -151,7 +151,7 @@ The website is responsive on all screens [General knowledgeQuiz](https://github.
 
 ### Validator Testing
 
-![Validation](https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/validator%20testing.png)
+![Validation](https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/validation%20testing%20screenshot.png)
 
 #### Fixed Bugs 
 - HTML
