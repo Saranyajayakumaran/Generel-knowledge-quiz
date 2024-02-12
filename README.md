@@ -9,17 +9,17 @@ The website is responsive on all screens [General knowledgeQuiz](https://github.
 
 ### Technologies Used
 - HTML
-    - Html is used to design the basic structure of the Game.
+    - Html is used for creating the structure and content of the game user interface.
 - Css
-    - The game is styled with many css propeties in a external css file.
+    - CSS is used for styling tha game's userinterface to enchance its visual appearance amd layout.
 - Javascript
     - Javascript is used to make the game user interactive.
 - GitHub
-    - GitHub is used to store and manage the code and deploy the code with git pages.
+    - GitHub is used for version control,collaboration and hosting the code repository.
 - Git 
-    - Git is used to commit and push code from the development Interface.
+    - Git is used to tracking changes,managing branches from the development Interface.
 - Vscode
-    - Used for programming HTML, CSS and Javascript.
+    - Visual studio Code IDE is used to write,edit and debug HTML,CSS and Javascript code.
 
 ## Features
 
@@ -165,10 +165,10 @@ The website is responsive on all screens [General knowledgeQuiz](https://github.
 ![W3C css validator](https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/css%20validator.png)
 
 - JavaScript
-    - Missed some semicolon and colosing brackets.
+    - Missed some semicolon and colosing brackets passig through JSHint JavaScript Validator
     - Had some unused UI elements.
     - Resolved it and again tested : No error found.
-![Jigsaw validator](https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/javascript%20validation%20.png)
+![JSHint JavaScript Validator](https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/javascript%20validation%20.png)
 
 ### Unfixed Bugs
 
