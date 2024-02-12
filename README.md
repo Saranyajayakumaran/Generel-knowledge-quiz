@@ -9,17 +9,17 @@ The website is responsive on all screens [General knowledgeQuiz](https://github.
 
 ### Technologies Used
 - HTML
-    - Html is used for creating the structure and content of the game user interface.
+    - Html is used for creating the structure and content of the game's user interface.
 - Css
-    - CSS is used for styling tha game's userinterface to enchance its visual appearance amd layout.
+    - CSS is used for styling tha game's user interface to enchance its visual appearance amd layout.
 - Javascript
     - Javascript is used to make the game user interactive.
 - GitHub
     - GitHub is used for version control,collaboration and hosting the code repository.
 - Git 
-    - Git is used to tracking changes,managing branches from the development Interface.
+    - Git is used to tracking changes and managing branches from the development Interface.
 - Vscode
-    - Visual studio Code IDE is used to write,edit and debug HTML,CSS and Javascript code.
+    - Visual studio Code IDE is used to write, edit and debug HTML,CSS and Javascript code.
 
 ## Features
 
@@ -50,10 +50,10 @@ The website is responsive on all screens [General knowledgeQuiz](https://github.
 #### Game section
 - The game section contains the questions with options,next button and also the time line for each question.
     - Time line
-      - Time line is used to dispaly the time for each each question.
+      - Time line is used to dispaly the time for each question.
     - Question and answer
-      - Each question have 4 options and 15 sec time.
-      - The questions will always different as e code select randomm question from quiz data array.
+      - Each question have 4 options and 15 seconds time.
+      - The questions will always different as code select random questions each time from quiz data array.
     - Next button
         - It provides a way to to go to next question when user selects the answer before 15 seconds.
 
@@ -62,28 +62,33 @@ The website is responsive on all screens [General knowledgeQuiz](https://github.
 ![Game section with wrong answer](https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/screenshot%20page%205.png)
 
 #### Score section
-- The score section contains the actual score of the user and give a feed back based on the score
+- The score section contains the actual score of the user and give a feedback based on the score
     - Resart Game button
         - This button helps the user to play the game again if they are interested.
 ![Score section screenshot](https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/scrennshot%20page%206.png)
+
+#### 404-Error page
+- The error page will display when user types something irrelevant to website.The user is given a choice of go to home page.
+
+![Error Page]()
 
 ### Future Implementations
 - In future implementation i would like to implement
  - Add more field for quiz that user can choose like sport,science etc.
  - Give the users to select  the difficulty level.
  - When user select the option timer also can be stopped.
- - Can create a previous question buton to see previous question.
+ - Can create a previous question button to see previous question.
  - Create a backend datatbase to enable me to store scores and compare high scores.
 
 
 ### How the Game works 
 
 - Step 1: Click start quiz Button.
-- Step 2: The start button navigates to game info section.
+- Step 2: The start button navigates to game information section.
 - Step 3: User should enter the name before starting the Game(Name can only contain alphabets, period (.) and Space).
 - Step 4: When user clicks continue button the Game section will display the first question with 4 options.
 - Step 5: When user clicks exit button it navigate to home page.
-- Step 6: Each question wil have 15 seconds time to select the option.
+- Step 6: Each question will have 15 seconds time to select the option.
 - Step 7: User can select only one option after selecting all the other options will be disabled.
 - step 8: If user select correct option the score will be increased to 1.
 - Step 9: If the user clicks the wrong answer the score will be same.
@@ -165,7 +170,7 @@ The website is responsive on all screens [General knowledgeQuiz](https://github.
 ![W3C css validator](https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/css%20validator.png)
 
 - JavaScript
-    - Missed some semicolon and colosing brackets passig through JSHint JavaScript Validator
+    - Missed some semicolon and colosing brackets passing through JSHint JavaScript Validator
     - Had some unused UI elements.
     - Resolved it and again tested : No error found.
 ![JSHint JavaScript Validator](https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/javascript%20validation%20.png)
@@ -187,7 +192,7 @@ I confirmed that the color and fonts choosen are easy to read and accessible by 
 - The commands used to push code to remote repository are:
     - git add .     -using to add the changes
     - git commit -m "..."   - using to commit the changes to github
-    - git push  - using to push the commited chnages to github
+    - git push  - using to push the commited changes to github
     - git diff  - used to see the changes we made before commiting.
 
 
@@ -214,7 +219,7 @@ I confirmed that the color and fonts choosen are easy to read and accessible by 
 
 - I would thank many sources and people who spported to complete my project.
     - Thanking my mentor Dick vlaanderen who guided me and his ideas and corrections was very helpful.
-    - I would like to thank some youtube channels helped t learn the concepts and ideas.
+    - I would like to thank some youtube channels helped to learn the concepts and ideas.
     - W3schools and stackoverflow plays a major role to learn the concepts.
     - The idea of webpage design and some coding has been referred from youtube channel [GreatStack](https://www.youtube.com/watch?v=PBcqGxrr9g8)
     - Learned some concepts from the [Love-Math](https://github.com/Saranyajayakumaran/Love-Math)
