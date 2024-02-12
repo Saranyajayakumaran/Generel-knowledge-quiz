@@ -1,3 +1,4 @@
+/*Default value to full screen*/
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +18,7 @@ body {
     display: flex;
     flex-direction: column;
 }
-
+/*design the titile of the game*/
 .heading {
     background: rgba(0, 0, 0, 0.7);
     height: fit-content;
@@ -62,7 +63,7 @@ body {
 .game-info h3 {
     font-size: 20px;
 }
-
+/*make the inpu section center*/
 .username,
 input {
     font-size: 20px;
@@ -76,7 +77,7 @@ input {
 .username {
     text-align: center;
 }
-
+/*deign the game block to fit content*/
 .game-area {
     background: rgba(0, 0, 0, 0.7);
     width: 85%;
@@ -94,7 +95,7 @@ input {
     display: flex;
     font-size: 13px;
 }
-
+/*Question style properties*/
 #questions,
 h2 {
     padding: 10px;
@@ -104,7 +105,7 @@ h2 {
 #question{
     font-size:20px;
 }
-
+/**isplay options in row*/
 #options {
     display: flex;
     flex-direction: column;
@@ -136,7 +137,7 @@ h2 {
     margin-left:40px;
 }
 .exit{
-    margin-left:20px;
+    margin-left:20px;/*make the button center*/
 }
 .exit,
 .continue {
@@ -168,7 +169,7 @@ h2 {
     background: #ff9393;
     /* incorrect answer will turn red*/
 }
-
+/*Next button properties*/
 .next button {
     width: 75px;
     height: 40px;
@@ -185,7 +186,6 @@ h2 {
 }
 
 #score {
-
     width: 250px;
     font-size: 20px;
     background-color: rgba(0, 0, 0, 0.7);
@@ -201,13 +201,13 @@ h2 {
     font-size: 20px;
     display: block;
 }
-
+/*values in separate color*/
 #message,
 #score-value,
 #feedback {
     color: rgb(200, 248, 110);
 }
-
+/*Restart button design*/
 #restart {
     width: 140px;
     height: 60px;
@@ -238,6 +238,7 @@ h2 {
     justify-content: center;
     height:100vh;
 }
+/*Error page font size*/
 .error-page h1,h2{
     font-size: 6rem;
     font-weight: bolder;
@@ -285,7 +286,7 @@ h2 {
         margin-top: 100px;
         width: fit-content;
     }
-
+/*game info section properties change for ipad*/
     .game-info {
 
         padding: 30px;
@@ -373,7 +374,7 @@ h2 {
     #options .btn {
         margin: 10px
     }
-
+/*Make the start button to appear in center*/
     .start_btn button {
         margin-left: 440px;
         text-align: center;
@@ -475,12 +476,12 @@ h2 {
         margin: 20px;
         margin-left: -10px;
     }
-
+/*Center the score block*/
     #score {
         margin-left: 600px;
         margin-bottom: 60px;
     }
-
+   /*Display the values in separate color*/
     #message,
     #score-value,
     #feedback {
@@ -492,7 +493,7 @@ h2 {
         margin-left: 730px;
     }
 }
-
+/*Biger screen size*/
 @media screen and (min-width: 1920px){
     .heading {
         margin-left: 750px;
