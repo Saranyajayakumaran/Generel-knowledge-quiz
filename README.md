@@ -141,6 +141,7 @@ The website is responsive on all screens [General knowledgeQuiz](https://github.
 |Click restart button|Reset all the details|Pass|
 |Replay the game|Get new name input|Pass|
 |Go to game section|Not repeating the questions in same order|Pass|
+|Question number 10|Display new name and score of the user|Pass|
 
  
 ### Bugs
@@ -154,6 +155,7 @@ The website is responsive on all screens [General knowledgeQuiz](https://github.
 |The user input and score was not resetting when playing the game again|The name input and score should be reset with blank string|Cleared all the inputs from user in reset quiz function|
 |Couldn't print the score area line by line|Display the score and feedback in next lines|Solved by added the lines in Html and print the name and score in javascript|
 |First question was not displayed when we click the continue button|Questions should be displayed in game section|Solved the bug by deleting the for loop which i used to get questions 10 times and call the next question function each time when we click continue button|
+|When click restart button in score section the new score was not displayed|Display new score and name of the user|Found that i have cleared the inner html of score section also in resetQuiz function and deleted that line it works|
 
 ### Lighthouse Validation
 

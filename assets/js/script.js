@@ -333,7 +333,6 @@ function resetQuiz() {
     let questionElement = document.getElementById("question");
     let optionsContainer = document.getElementById("options");
     nameInput.value = "";
-    scoreValue.innerHTML = "";
     questionElement.innerHTML = "";
     optionsContainer.innerHTML = "";
     homePage();
