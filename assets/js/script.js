@@ -106,8 +106,6 @@ const quizData = [
 
 document.addEventListener('DOMContentLoaded', function () {
     /*document.body.style.backgroundImage="url('assets\images\6114100.jpg')";*/
-
-    
     let startBtn = document.querySelector(".start_btn button");
     let exitBtn = document.getElementsByClassName(".exit");
     let nextBtn = document.getElementsByClassName(".next");
@@ -260,7 +258,6 @@ function nextQuestion() {
         displayScore();
     }
 }
-
 /**
  * Code to select option button from the user and check it is correct or not-m ""
  * @param {string} selectedOption */
@@ -307,6 +304,7 @@ function displayScore() {
         feedback.textContent="Great job! Keep It Up";
     }
 }
+/*he function will reset all the values and go to hompage*/
 function exitQuiz() {
     // get confirmation from the user
     const confirmExit = confirm("Are you sure you want to exit the quiz?");

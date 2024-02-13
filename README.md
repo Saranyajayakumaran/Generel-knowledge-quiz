@@ -155,7 +155,7 @@ The website is responsive on all screens [General knowledgeQuiz](https://github.
 |Coudn't print the score area line by line|Display the score and feedback in next lines|Solved by added the lines in Html and print the name and score in javascript|
 |First question was not displayed when we click the continue button|Questions should be displayed in game section|Solved the bug by deleting the for loop which i used to get questions 10 times and call the next question function each time when we click continue button|
 
-### Validator Testing
+### Lighthouse Validation
 
 ![Validation](https://github.com/Saranyajayakumaran/Generel-knowledge-quiz/blob/main/assets/images/validation%20testing%20screenshot.png)
 

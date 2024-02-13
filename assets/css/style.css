@@ -33,6 +33,7 @@ body {
     width: fit-content;
     margin: 25px;
     margin-left: 15px;
+    border-radius:5px;
 }
 
 /*change the logo size to fit with the heading*/
@@ -51,6 +52,7 @@ body {
     margin-left:20px;
     padding-right: 15px;
     font-size:10px;
+    border-radius:5px;
 }
 
 .info ol {
@@ -66,12 +68,10 @@ body {
 /*make the inpu section center*/
 .username,
 input {
-    font-size: 20px;
+    font-size: 18px;
     text-align: left;
     color: rgba(0, 0, 0);
-    margin: 10px;
-    margin-left: 5px;
-    padding-bottom: 6px;
+    padding:2px;
 }
 
 .username {
@@ -86,6 +86,7 @@ input {
     margin: 20px;
     margin-top: 70px;
     padding-bottom: 10px;
+    border-radius:5px;
 }
 
 .time {
@@ -159,7 +160,6 @@ h2 {
     border-radius: 5px;
 
 }
-
 .correct {
     background: #9aeabc;
     /*correct answers will turn green*/
@@ -229,7 +229,6 @@ h2 {
     background-color: #ffffff;
     color: #000000;
 }
-
 /*404 Error page style*/
 .error-page {
     display: flex;
@@ -513,7 +512,7 @@ h2 {
         margin-left: 800px;
     }
     #restart {
-        margin-left: 950px;
+        margin-left: 850px;
         font-size:20px;
     }
 
