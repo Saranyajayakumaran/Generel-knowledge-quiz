@@ -18,6 +18,7 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 /*design the titile of the game*/
 .heading {
     background: rgba(0, 0, 0, 0.7);
@@ -33,7 +34,7 @@ body {
     width: fit-content;
     margin: 25px;
     margin-left: 15px;
-    border-radius:5px;
+    border-radius: 5px;
 }
 
 /*change the logo size to fit with the heading*/
@@ -49,35 +50,37 @@ body {
     background: rgba(0, 0, 0, 0.7);
     color: white;
     margin: 25px;
-    margin-left:20px;
+    margin-left: 20px;
     padding-right: 15px;
-    font-size:10px;
-    border-radius:5px;
+    font-size: 10px;
+    border-radius: 5px;
 }
 
 .info ol {
     padding-bottom: 10px;
     margin-bottom: 20px;
     font-size: 12px;
-    margin-left:8px;
+    margin-left: 8px;
 }
 
 .game-info h3 {
     font-size: 20px;
 }
-/*make the inpu section center*/
+
+/*make the input section center*/
 .username,
 input {
     font-size: 18px;
     text-align: left;
     color: rgba(0, 0, 0);
-    padding:2px;
+    padding: 2px;
 }
 
 .username {
     text-align: center;
 }
-/*deign the game block to fit content*/
+
+/*design the game block to fit content*/
 .game-area {
     background: rgba(0, 0, 0, 0.7);
     width: 85%;
@@ -86,7 +89,7 @@ input {
     margin: 20px;
     margin-top: 70px;
     padding-bottom: 10px;
-    border-radius:5px;
+    border-radius: 5px;
 }
 
 .time {
@@ -96,6 +99,7 @@ input {
     display: flex;
     font-size: 13px;
 }
+
 /*Question style properties*/
 #questions,
 h2 {
@@ -103,10 +107,12 @@ h2 {
     padding-top: 40px;
     text-align: left;
 }
-#question{
-    font-size:20px;
+
+#question {
+    font-size: 20px;
 }
-/**isplay options in row*/
+
+/**display options in row*/
 #options {
     display: flex;
     flex-direction: column;
@@ -114,6 +120,7 @@ h2 {
     width: 100%;
 
 }
+
 /*giving all the buttons same size*/
 .start_btn button {
     padding: 10px 20px;
@@ -121,6 +128,7 @@ h2 {
     margin-bottom: 20px;
 
 }
+
 /* Add some spacing between the buttons */
 .start_btn button {
     margin-left: 70px;
@@ -132,14 +140,17 @@ h2 {
 }
 
 .buttons {
-    display:block;
+    display: block;
     justify-content: space-between;
     padding: 8px;
-    margin-left:40px;
+    margin-left: 40px;
 }
-.exit{
-    margin-left:20px;/*make the button center*/
+
+.exit {
+    margin-left: 20px;
+    /*make the button center*/
 }
+
 .exit,
 .continue {
     width: fit-content;
@@ -151,6 +162,7 @@ h2 {
     border-radius: 5px;
     cursor: pointer;
 }
+
 .btn {
     width: 200px;
     height: 40px;
@@ -160,6 +172,7 @@ h2 {
     border-radius: 5px;
 
 }
+
 .correct {
     background: #9aeabc;
     /*correct answers will turn green*/
@@ -169,6 +182,7 @@ h2 {
     background: #ff9393;
     /* incorrect answer will turn red*/
 }
+
 /*Next button properties*/
 .next button {
     width: 75px;
@@ -178,9 +192,8 @@ h2 {
     color: #000000;
     border-radius: 5px;
     margin-left: 80px;
-
-
 }
+
 #question h2 {
     padding-left: 20px;
 }
@@ -201,12 +214,14 @@ h2 {
     font-size: 20px;
     display: block;
 }
+
 /*values in separate color*/
 #message,
 #score-value,
 #feedback {
     color: rgb(200, 248, 110);
 }
+
 /*Restart button design*/
 #restart {
     width: 140px;
@@ -229,27 +244,33 @@ h2 {
     background-color: #ffffff;
     color: #000000;
 }
+
 /*404 Error page style*/
 .error-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height:100vh;
+    height: 100vh;
 }
+
 /*Error page font size*/
-.error-page h1,h2{
+.error-page h1,
+h2 {
     font-size: 6rem;
     font-weight: bolder;
     color: #ffffff;
-    margin-bottom: 10px;   
+    margin-bottom: 10px;
 }
-.error-page h3{
-    font-size: 3rem;   
+
+.error-page h3 {
+    font-size: 3rem;
 }
-.go-to-homepage{
-    font-size:2rem;
+
+.go-to-homepage {
+    font-size: 2rem;
 }
+
 /* Media query:tablets and larger(768px and up*/
 @media screen and (min-width:768px) {
 
@@ -285,7 +306,8 @@ h2 {
         margin-top: 100px;
         width: fit-content;
     }
-/*game info section properties change for ipad*/
+
+    /*game info section properties change for ipad*/
     .game-info {
 
         padding: 30px;
@@ -297,34 +319,39 @@ h2 {
     }
 
     .info {
-        font-size: 15px;
+        font-size: 10px;
         padding-bottom: 10px;
+        padding-left: 10px;
     }
-
     .username,
     input {
-        padding-top: 10px;
+        padding: 5px;
         margin-top: 10px;
         margin-bottom: 20px;
+        border-radius: 5px;
     }
 
     .time {
         padding-left: 380px;
         font-size: 25px;
     }
-    .info ol{
-        font-size:20px;
-        margin-left:20px;
+
+    .info ol {
+        font-size: 20px;
+        margin-left: 20px;
     }
-    .buttons{
-        display:flex;
+
+    .buttons {
+        display: flex;
         justify-content: space-between;
     }
-    .continue{
-        margin-left:160px;
+
+    .continue {
+        margin-left: 160px;
     }
-    .exit{
-        margin-left:180px;
+
+    .exit {
+        margin-left: 180px;
     }
 
     .game-area {
@@ -333,6 +360,7 @@ h2 {
         margin: 80px;
         margin-top: 200px;
     }
+
     .next button {
         margin-left: 220px;
     }
@@ -342,8 +370,9 @@ h2 {
         height: 100px;
         margin-left: 200px;
     }
-    #restart{
-        margin-left:340px;
+
+    #restart {
+        margin-left: 340px;
     }
 }
 
@@ -361,11 +390,13 @@ h2 {
         padding-left: 50px;
         margin-bottom: 20px
     }
+
     .game-info {
         margin-left: 250px;
         height: 430px;
 
     }
+
     .game-area {
         margin: 200px;
     }
@@ -373,11 +404,13 @@ h2 {
     #options .btn {
         margin: 10px
     }
-/*Make the start button to appear in center*/
+
+    /*Make the start button to appear in center*/
     .start_btn button {
         margin-left: 440px;
         text-align: center;
     }
+
     .next {
         margin: auto;
         margin-top: 15px;
@@ -386,8 +419,9 @@ h2 {
     #score {
         margin-left: 310px;
     }
-    #restart{
-        margin-left:430px;
+
+    #restart {
+        margin-left: 430px;
     }
 
 }
@@ -445,7 +479,7 @@ h2 {
 
     .heading {
         margin-left: 550px;
-        margin-top:50px;
+        margin-top: 50px;
     }
 
     /*Make the input section to display center of the page*/
@@ -454,6 +488,12 @@ h2 {
         margin-left: 20px;
         text-align: center;
         align-items: center;
+
+    }
+
+    #name {
+        padding: 5px;
+        border-radius: 5px;
     }
 
     .start_btn button {
@@ -463,24 +503,28 @@ h2 {
 
     .game-info {
         margin-left: 480px;
-        height:fit-content;
+        height: fit-content;
     }
+
     .game-area {
         align-content: center;
         padding-left: 50px;
         margin-top: 80px;
         margin-left: 450px;
     }
+
     .next {
         margin: 20px;
         margin-left: -10px;
     }
-/*Center the score block*/
+
+    /*Center the score block*/
     #score {
         margin-left: 600px;
         margin-bottom: 60px;
     }
-   /*Display the values in separate color*/
+
+    /*Display the values in separate color*/
     #message,
     #score-value,
     #feedback {
@@ -492,29 +536,35 @@ h2 {
         margin-left: 730px;
     }
 }
+
 /*Biger screen size*/
-@media screen and (min-width: 1920px){
+@media screen and (min-width: 1920px) {
     .heading {
         margin-left: 750px;
-    }.start_btn button {
-        margin-left: 900px;
     }
+
+    .start_btn button {
+        margin-left: 880px;
+    }
+
     .game-info {
         margin-left: 680px;
     }
+
     .game-area {
         width: 600px;
-        height:fit-content;
-        margin-left:700px;
-        margin-top:100px;
+        height: fit-content;
+        margin-left: 700px;
+        margin-top: 100px;
     }
+
     #score {
         margin-left: 800px;
     }
+
     #restart {
-        margin-left: 850px;
-        font-size:20px;
+        margin-left: 920px;
+        font-size: 20px;
     }
 
 }
-
